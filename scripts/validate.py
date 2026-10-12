@@ -2,12 +2,15 @@
 """Checks tiles.json and projectors.json: shape, numbers, unique ids, unique lens names. Exit 1 on any problem."""
 import json, os, sys
 
+def is_number(x):
+    return isinstance(x, (int, float)) and not isinstance(x, bool)
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 problems = []
 
 def positive(entry, key, where):
     v = entry.get(key)
-    if not isinstance(v, dict) or not isinstance(v.get("width"), (int, float)) or not isinstance(v.get("height"), (int, float)) or v["width"] <= 0 or v["height"] <= 0:
+    if not isinstance(v, dict) or not is_number(v.get("width")) or not is_number(v.get("height")) or v["width"] <= 0 or v["height"] <= 0:
         problems.append(f"{where}: {key} must have width and height above zero")
 
 def check_file(name, check_entry):
@@ -42,12 +45,12 @@ def check_tile(entry, where):
     positive(entry, "tileResolution", where)
     positive(entry, "tileSize", where)
     t = entry.get("transparency")
-    if t is not None and (not isinstance(t, (int, float)) or t < 0 or t > 100):
+    if t is not None and (not is_number(t) or t < 0 or t > 100):
         problems.append(f"{where}: transparency must be null or 0–100")
 
 def check_projector(entry, where):
     positive(entry, "resolution", where)
-    if not isinstance(entry.get("lumens"), (int, float)) or entry["lumens"] < 0:
+    if not is_number(entry.get("lumens")) or entry["lumens"] < 0:
         problems.append(f"{where}: lumens must be a number from 0")
     lenses = entry.get("lenses")
     if not isinstance(lenses, list):
@@ -63,9 +66,9 @@ def check_projector(entry, where):
             problems.append(f"{lw}: duplicate lens name {name}")
         names.add(name)
         lo, hi = lens.get("throwMin"), lens.get("throwMax")
-        if not isinstance(lo, (int, float)) or not 0.1 <= lo <= 20:
+        if not is_number(lo) or not 0.1 <= lo <= 20:
             problems.append(f"{lw}: throwMin must be 0.1–20")
-        if hi is not None and (not isinstance(hi, (int, float)) or not 0.1 <= hi <= 20 or hi < lo):
+        if hi is not None and (not is_number(hi) or not 0.1 <= hi <= 20 or hi < lo):
             problems.append(f"{lw}: throwMax must be null or 0.1–20 and not below throwMin")
 
 check_file("tiles.json", check_tile)
