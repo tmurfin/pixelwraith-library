@@ -1,0 +1,524 @@
+{
+  "entries" : [
+    {
+      "id" : "absen-a3-pro",
+      "manufacturer" : "Absen",
+      "model" : "A3 Pro",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "desay-x5",
+      "manufacturer" : "Desay",
+      "model" : "X5",
+      "tileResolution" : {
+        "height" : 96,
+        "width" : 96
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-er5",
+      "manufacturer" : "Infiled",
+      "model" : "ER5",
+      "tileResolution" : {
+        "height" : 168,
+        "width" : 84
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-er3-9",
+      "manufacturer" : "Infiled",
+      "model" : "ER3.9",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 250
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "leyard-clm-6",
+      "manufacturer" : "Leyard",
+      "model" : "CLM 6",
+      "tileResolution" : {
+        "height" : 144,
+        "width" : 72
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "leyard-clm10",
+      "manufacturer" : "Leyard",
+      "model" : "CLM10",
+      "tileResolution" : {
+        "height" : 96,
+        "width" : 48
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "leyard-clo-3-9",
+      "manufacturer" : "Leyard",
+      "model" : "CLO 3.9",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-rb1-2",
+      "manufacturer" : "ROE",
+      "model" : "RB1.2",
+      "tileResolution" : {
+        "height" : 400,
+        "width" : 400
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-rb1-5f",
+      "manufacturer" : "ROE",
+      "model" : "RB1.5F",
+      "tileResolution" : {
+        "height" : 320,
+        "width" : 320
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-rb1-9f",
+      "manufacturer" : "ROE",
+      "model" : "RB1.9F",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-rb2-2",
+      "manufacturer" : "ROE",
+      "model" : "RB2.2",
+      "tileResolution" : {
+        "height" : 224,
+        "width" : 224
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-rb2-6",
+      "manufacturer" : "ROE",
+      "model" : "RB2.6",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm2",
+      "manufacturer" : "ROE",
+      "model" : "BM2",
+      "tileResolution" : {
+        "height" : 216,
+        "width" : 216
+      },
+      "tileSize" : {
+        "height" : 609.60000000000002,
+        "width" : 609.60000000000002
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm4",
+      "manufacturer" : "ROE",
+      "model" : "BM4",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 609.60000000000002,
+        "width" : 609.60000000000002
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm5",
+      "manufacturer" : "ROE",
+      "model" : "BM5",
+      "tileResolution" : {
+        "height" : 104,
+        "width" : 104
+      },
+      "tileSize" : {
+        "height" : 609.60000000000002,
+        "width" : 609.60000000000002
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-topaz-1-5",
+      "manufacturer" : "ROE",
+      "model" : "Topaz 1.5",
+      "tileResolution" : {
+        "height" : 320,
+        "width" : 320
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-topaz-1-9",
+      "manufacturer" : "ROE",
+      "model" : "Topaz 1.9",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-topaz-2-2",
+      "manufacturer" : "ROE",
+      "model" : "Topaz 2.2",
+      "tileResolution" : {
+        "height" : 224,
+        "width" : 224
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-topaz-2-6",
+      "manufacturer" : "ROE",
+      "model" : "Topaz 2.6",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-gp2-6",
+      "manufacturer" : "ROE",
+      "model" : "GP2.6",
+      "tileResolution" : {
+        "height" : 384,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-gp3-1",
+      "manufacturer" : "ROE",
+      "model" : "GP3.1",
+      "tileResolution" : {
+        "height" : 320,
+        "width" : 160
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-gp3-9",
+      "manufacturer" : "ROE",
+      "model" : "GP3.9",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bp2",
+      "manufacturer" : "ROE",
+      "model" : "BP2",
+      "tileResolution" : {
+        "height" : 176,
+        "width" : 176
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bp3",
+      "manufacturer" : "ROE",
+      "model" : "BP3",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bq3-9",
+      "manufacturer" : "ROE",
+      "model" : "BQ3.9",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 1000
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bq4-6",
+      "manufacturer" : "ROE",
+      "model" : "BQ4.6",
+      "tileResolution" : {
+        "height" : 108,
+        "width" : 216
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 1000
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bq6-2",
+      "manufacturer" : "ROE",
+      "model" : "BQ6.2",
+      "tileResolution" : {
+        "height" : 80,
+        "width" : 160
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 1000
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-vanish-v4st",
+      "manufacturer" : "ROE",
+      "model" : "Vanish V4ST",
+      "tileResolution" : {
+        "height" : 250,
+        "width" : 250
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 1000
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-vanish-v6st",
+      "manufacturer" : "ROE",
+      "model" : "Vanish V6ST",
+      "tileResolution" : {
+        "height" : 144,
+        "width" : 144
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 1000
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-vanish-v8t",
+      "manufacturer" : "ROE",
+      "model" : "Vanish V8T",
+      "tileResolution" : {
+        "height" : 112,
+        "width" : 112
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 1000
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-vanish-v5s-mkii",
+      "manufacturer" : "ROE",
+      "model" : "Vanish V5S MKII",
+      "tileResolution" : {
+        "height" : 176,
+        "width" : 176
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 1000
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-vanish-v8s-mkii",
+      "manufacturer" : "ROE",
+      "model" : "Vanish V8S MKII",
+      "tileResolution" : {
+        "height" : 112,
+        "width" : 112
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 1000
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-cb3",
+      "manufacturer" : "ROE",
+      "model" : "CB3",
+      "tileResolution" : {
+        "height" : 320,
+        "width" : 160
+      },
+      "tileSize" : {
+        "height" : 1200,
+        "width" : 600
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-cb5",
+      "manufacturer" : "ROE",
+      "model" : "CB5",
+      "tileResolution" : {
+        "height" : 208,
+        "width" : 104
+      },
+      "tileSize" : {
+        "height" : 1200,
+        "width" : 600
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-cb8",
+      "manufacturer" : "ROE",
+      "model" : "CB8",
+      "tileResolution" : {
+        "height" : 144,
+        "width" : 72
+      },
+      "tileSize" : {
+        "height" : 1200,
+        "width" : 600
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "unilumin-upadiii-h05",
+      "manufacturer" : "Unilumin",
+      "model" : "UPADIII H05",
+      "tileResolution" : {
+        "height" : 168,
+        "width" : 84
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "unilumin-upadiii2",
+      "manufacturer" : "Unilumin",
+      "model" : "UpadIII2",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    }
+  ],
+  "updated" : "2026-10-12",
+  "version" : 1
+}
