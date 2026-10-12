@@ -70,6 +70,11 @@ Nice projector.
     broken["entries"][0]["tileSize"]["width"] = 0
     json.dump(broken, open(os.path.join(tmp, "tiles.json"), "w"))
     check(run(validate, cwd=tmp).returncode != 0, "validate: a zero size fails")
+    broken["entries"][0]["tileSize"]["width"] = True
+    json.dump(broken, open(os.path.join(tmp, "tiles.json"), "w"))
+    check(run(validate, cwd=tmp).returncode != 0, "validate: a boolean where a number belongs fails")
+    bool_issue = tile_issue.replace('"width": 104', '"width": true').replace("Carbon CB5", "Carbon CB8")
+    check(run(merge + ["tiles"], stdin=bool_issue, cwd=tmp).returncode != 0, "merge: a boolean where a number belongs is refused")
 
 print("ALL PASS" if fails == 0 else f"{fails} FAILED")
 sys.exit(0 if fails == 0 else 1)

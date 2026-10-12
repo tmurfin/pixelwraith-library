@@ -8,6 +8,9 @@ then runs validate.py. Refuses a duplicate manufacturer and model, a bad number,
 """
 import datetime, json, os, re, subprocess, sys
 
+def is_number(x):
+    return isinstance(x, (int, float)) and not isinstance(x, bool)
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def slug(manufacturer, model):
@@ -40,19 +43,19 @@ def main():
     if kind == "tiles":
         for key in ("tileResolution", "tileSize"):
             v = entry.get(key, {})
-            if not (isinstance(v, dict) and v.get("width", 0) > 0 and v.get("height", 0) > 0):
+            if not (isinstance(v, dict) and is_number(v.get("width")) and is_number(v.get("height")) and v["width"] > 0 and v["height"] > 0):
                 fail(f"{key} must have width and height above zero")
         t = entry.get("transparency")
-        if t is not None and not (isinstance(t, (int, float)) and 0 <= t <= 100):
+        if t is not None and not (is_number(t) and 0 <= t <= 100):
             fail("transparency must be null or 0–100")
         ordered = {"id": None, "manufacturer": entry["manufacturer"], "model": entry["model"],
                    "tileResolution": entry["tileResolution"], "tileSize": entry["tileSize"], "transparency": t}
     else:
         v = entry.get("resolution", {})
-        if not (isinstance(v, dict) and v.get("width", 0) > 0 and v.get("height", 0) > 0):
+        if not (isinstance(v, dict) and is_number(v.get("width")) and is_number(v.get("height")) and v["width"] > 0 and v["height"] > 0):
             fail("resolution must have width and height above zero")
         lumens = entry.get("lumens", 0)
-        if not isinstance(lumens, (int, float)) or lumens < 0:
+        if not is_number(lumens) or lumens < 0:
             fail("lumens must be a number from 0")
         lenses = []
         names = set()
@@ -64,11 +67,11 @@ def main():
                 fail(f"duplicate lens name {name}")
             names.add(name)
             lo, hi = lens.get("throwMin"), lens.get("throwMax")
-            if not isinstance(lo, (int, float)):
+            if not is_number(lo):
                 fail(f"lens {name}: throwMin must be a number")
             lo = min(max(0.1, lo), 20)
             if hi is not None:
-                if not isinstance(hi, (int, float)):
+                if not is_number(hi):
                     fail(f"lens {name}: throwMax must be a number or null")
                 hi = min(max(0.1, hi), 20)
                 if hi < lo:
