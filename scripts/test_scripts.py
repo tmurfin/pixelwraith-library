@@ -16,13 +16,17 @@ def run(args, stdin=None, cwd=None):
     return subprocess.run([sys.executable] + args, input=stdin, capture_output=True, text=True, cwd=cwd)
 
 with tempfile.TemporaryDirectory() as tmp:
-    for name in ("tiles.json", "projectors.json"):
-        shutil.copy(os.path.join(ROOT, name), tmp)
+    # The fixtures run against small files of their own, so the live tiles.json and projectors.json can grow
+    # without changing what the tests expect; the live files are only validated
+    json.dump({"version": 1, "updated": "2026-10-12", "entries": [
+        {"id": "absen-a3-pro", "manufacturer": "Absen", "model": "A3 Pro", "tileResolution": {"width": 128, "height": 128},
+         "tileSize": {"width": 500, "height": 500}, "transparency": None}]}, open(os.path.join(tmp, "tiles.json"), "w"))
+    json.dump({"version": 1, "updated": "2026-10-12", "entries": []}, open(os.path.join(tmp, "projectors.json"), "w"))
     shutil.copytree(HERE, os.path.join(tmp, "scripts"))
     merge = [os.path.join(tmp, "scripts", "merge.py")]
     validate = [os.path.join(tmp, "scripts", "validate.py")]
 
-    check(run(validate, cwd=tmp).returncode == 0, "the shipped files validate")
+    check(run([os.path.join(HERE, "validate.py")], cwd=ROOT).returncode == 0, "the shipped files validate")
 
     issue = """Spec sheet: https://example.com/udx
 
@@ -42,8 +46,8 @@ Nice projector.
     result = run(merge + ["projectors"], stdin=issue, cwd=tmp)
     after = json.load(open(os.path.join(tmp, "projectors.json")))
     check(result.returncode == 0, "merge: a projector issue merges (" + result.stderr.strip() + ")")
-    check(after["version"] == before["version"] + 1 and len(after["entries"]) == 1, "merge: version bumped, entry appended")
-    entry = after["entries"][0]
+    check(after["version"] == before["version"] + 1 and len(after["entries"]) == len(before["entries"]) + 1, "merge: version bumped, entry appended")
+    entry = after["entries"][-1]
     check(entry["id"] == "barco-udx-4k32" and entry["lenses"][0]["throwMin"] == 1.5 and entry["lenses"][0]["throwMax"] == 2.2, "merge: slug assigned, backwards zoom ordered")
     check("source" not in entry and len(after["updated"]) == 10, "merge: no source key, updated set")
     again = run(merge + ["projectors"], stdin=issue, cwd=tmp)
