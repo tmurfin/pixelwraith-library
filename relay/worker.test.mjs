@@ -44,6 +44,9 @@ test("the rate limiter answers 429 before GitHub is called, keyed by the client 
   const allowed = { limit: async () => ({ success: true }) };
   const ok = await handle(request(good), { ...env, RATE_LIMITER: allowed }, github(201, { number: 1, html_url: "u" }));
   assert.equal(ok.status, 201);
+  // The limit is checked before the body is read, so a flood of junk is turned away as cheaply as a real one
+  const junk = await handle(request({}), { ...env, RATE_LIMITER: limiter }, github(201, {}));
+  assert.equal(junk.status, 429);
 });
 
 test("a good submission opens the issue with the labels and the body unchanged", async () => {

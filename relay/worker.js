@@ -10,6 +10,13 @@ export async function handle(request, env, githubFetch = fetch) {
   const url = new URL(request.url);
   if (url.pathname !== "/submit") return json(404, { error: "not found" });
   if (request.method !== "POST") return json(405, { error: "POST only" });
+  // Ten posts a minute per address (the RATE_LIMITER binding in wrangler.toml), checked before the body is read
+  // so a flood costs nothing; over that, 429, which the app treats as "try again later"
+  if (env.RATE_LIMITER) {
+    const key = request.headers.get("cf-connecting-ip") || "unknown";
+    const { success } = await env.RATE_LIMITER.limit({ key });
+    if (!success) return json(429, { error: "too many submissions from this address; try again in a minute" });
+  }
   if (Number(request.headers.get("content-length") || 0) > MAX_BYTES) return json(400, { error: "too large" });
   const text = await request.text();
   if (new TextEncoder().encode(text).length > MAX_BYTES) return json(400, { error: "too large" });
@@ -17,13 +24,6 @@ export async function handle(request, env, githubFetch = fetch) {
   try { submission = JSON.parse(text); } catch { return json(400, { error: "not JSON" }); }
   const problem = validate(submission);
   if (problem) return json(400, { error: problem });
-  // Ten submissions a minute per address (the RATE_LIMITER binding in wrangler.toml); over that, 429, which the
-  // app treats as "try again later"
-  if (env.RATE_LIMITER) {
-    const key = request.headers.get("cf-connecting-ip") || "unknown";
-    const { success } = await env.RATE_LIMITER.limit({ key });
-    if (!success) return json(429, { error: "too many submissions from this address; try again in a minute" });
-  }
   const answer = await githubFetch(`https://api.github.com/repos/${REPOSITORY}/issues`, {
     method: "POST",
     headers: {
