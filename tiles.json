@@ -87,13 +87,13 @@
     {
       "id" : "leyard-clo-3-9",
       "manufacturer" : "Leyard",
-      "model" : "CLO 3.9",
+      "model" : "CLO3.9",
       "tileResolution" : {
-        "height" : 256,
+        "height" : 128,
         "width" : 128
       },
       "tileSize" : {
-        "height" : 1000,
+        "height" : 500,
         "width" : 500
       },
       "transparency" : null
