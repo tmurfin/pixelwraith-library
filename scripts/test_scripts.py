@@ -58,6 +58,20 @@ Nice projector.
     dup = issue.replace("FLD+ 0.37", "FLD+ 1.5-2.2").replace("UDX-4K32", "UDX-4K40")
     check(run(merge + ["projectors"], stdin=dup, cwd=tmp).returncode != 0, "merge: duplicate lens names refused")
 
+    old = issue.replace("UDX-4K32", "HDX-W12").replace('"lumens": 31000', '"lumens": 12000, "discontinued": true').replace('"throwMax": null}', '"throwMax": null, "discontinued": true}')
+    result = run(merge + ["projectors"], stdin=old, cwd=tmp)
+    entry = json.load(open(os.path.join(tmp, "projectors.json")))["entries"][-1]
+    check(result.returncode == 0 and entry.get("discontinued") is True and entry["lenses"][1].get("discontinued") is True and "discontinued" not in entry["lenses"][0], "merge: discontinued flags carried on the projector and its lens, absent where not given")
+    check(run(validate, cwd=tmp).returncode == 0, "validate: discontinued flags pass")
+    word = old.replace('"discontinued": true,', '"discontinued": "yes",', 1).replace("HDX-W12", "HDX-W14")
+    check(run(merge + ["projectors"], stdin=word, cwd=tmp).returncode != 0, "merge: a discontinued flag that is not true or false is refused")
+    flagged = json.load(open(os.path.join(tmp, "projectors.json")))
+    flagged["entries"][-1]["lenses"][0]["discontinued"] = 1
+    json.dump(flagged, open(os.path.join(tmp, "projectors.json"), "w"))
+    check(run(validate, cwd=tmp).returncode != 0, "validate: a discontinued flag that is not true or false fails")
+    flagged["entries"][-1]["lenses"][0].pop("discontinued")
+    json.dump(flagged, open(os.path.join(tmp, "projectors.json"), "w"))
+
     tile_issue = """```json
 {"manufacturer": "ROE", "model": "Carbon CB5", "tileResolution": {"width": 104, "height": 104}, "tileSize": {"width": 600, "height": 600}, "transparency": null}
 ```"""

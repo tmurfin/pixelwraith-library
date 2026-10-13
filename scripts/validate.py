@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Checks tiles.json and projectors.json: shape, numbers, unique ids, unique lens names. Exit 1 on any problem."""
+"""Checks tiles.json and projectors.json: shape, numbers, unique ids, unique lens names, discontinued flags. Exit 1 on any problem."""
 import json, os, sys
 
 def is_number(x):
@@ -39,7 +39,12 @@ def check_file(name, check_entry):
         ids.add(entry.get("id"))
         if "source" in entry:
             problems.append(f"{where}: repository entries carry no source")
+        flag(entry, where)
         check_entry(entry, where)
+
+def flag(item, where):
+    if "discontinued" in item and not isinstance(item["discontinued"], bool):
+        problems.append(f"{where}: discontinued must be true or false")
 
 def check_tile(entry, where):
     positive(entry, "tileResolution", where)
@@ -65,6 +70,7 @@ def check_projector(entry, where):
         if name in names:
             problems.append(f"{lw}: duplicate lens name {name}")
         names.add(name)
+        flag(lens, lw)
         lo, hi = lens.get("throwMin"), lens.get("throwMax")
         if not is_number(lo) or not 0.1 <= lo <= 20:
             problems.append(f"{lw}: throwMin must be 0.1–20")

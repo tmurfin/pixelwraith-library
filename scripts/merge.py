@@ -21,6 +21,14 @@ def fail(msg):
     print(msg, file=sys.stderr)
     sys.exit(1)
 
+def discontinued(item, ordered, what):
+    """Carries a discontinued flag over when the submission gives one; only true or false is accepted."""
+    if "discontinued" in item:
+        if not isinstance(item["discontinued"], bool):
+            fail(f"{what}: discontinued must be true or false")
+        ordered["discontinued"] = item["discontinued"]
+    return ordered
+
 def main():
     if len(sys.argv) < 2 or sys.argv[1] not in ("tiles", "projectors"):
         fail("usage: merge.py <tiles|projectors> [file]")
@@ -76,9 +84,9 @@ def main():
                 hi = min(max(0.1, hi), 20)
                 if hi < lo:
                     lo, hi = hi, lo
-            lenses.append({"name": name, "throwMin": lo, "throwMax": hi})
-        ordered = {"id": None, "manufacturer": entry["manufacturer"], "model": entry["model"],
-                   "resolution": v, "lumens": lumens, "lenses": lenses}
+            lenses.append(discontinued(lens, {"name": name, "throwMin": lo, "throwMax": hi}, f"lens {name}"))
+        ordered = discontinued(entry, {"id": None, "manufacturer": entry["manufacturer"], "model": entry["model"],
+                                       "resolution": v, "lumens": lumens, "lenses": lenses}, "the projector")
     path = os.path.join(ROOT, f"{kind}.json")
     data = json.load(open(path))
     new_id = slug(ordered["manufacturer"], ordered["model"])
