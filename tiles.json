@@ -5249,8 +5249,22 @@
         "width": 500
       },
       "transparency": null
+    },
+    {
+      "id": "pixelflex-flextour-2-6",
+      "manufacturer": "PixelFLEX",
+      "model": "FLEXTour 2.6",
+      "tileResolution": {
+        "height": 192,
+        "width": 192
+      },
+      "tileSize": {
+        "height": 500,
+        "width": 500
+      },
+      "transparency": null
     }
   ],
   "updated": "2026-10-13",
-  "version": 5
+  "version": 6
 }
