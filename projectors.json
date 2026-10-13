@@ -1,7 +1,3402 @@
 {
-  "entries" : [
-
+  "entries": [
+    {
+      "id": "barco-f80-4k12",
+      "manufacturer": "Barco",
+      "model": "F80-4K12",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 12000,
+      "lenses": [
+        {
+          "name": "GLD 0.37-0.40:1 UST",
+          "throwMin": 0.37,
+          "throwMax": 0.4
+        },
+        {
+          "name": "FLDX 0.54:1 UST",
+          "throwMin": 0.54,
+          "throwMax": null
+        },
+        {
+          "name": "GLD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "GLD 1.0-1.35:1",
+          "throwMin": 1.0,
+          "throwMax": 1.35
+        },
+        {
+          "name": "GLD 1.35-2.0:1",
+          "throwMin": 1.35,
+          "throwMax": 2.0
+        },
+        {
+          "name": "GLD 2.0-3.0:1",
+          "throwMin": 2.0,
+          "throwMax": 3.0
+        },
+        {
+          "name": "FLDX 2.25-3.30:1",
+          "throwMin": 2.25,
+          "throwMax": 3.3
+        },
+        {
+          "name": "FLD+ 3.30-6.08:1",
+          "throwMin": 3.3,
+          "throwMax": 6.08
+        },
+        {
+          "name": "FLD 5.37-9.19:1",
+          "throwMin": 5.37,
+          "throwMax": 9.19
+        },
+        {
+          "name": "FLD 9.19-12.73:1",
+          "throwMin": 9.19,
+          "throwMax": 12.73
+        }
+      ]
+    },
+    {
+      "id": "barco-f80-q12",
+      "manufacturer": "Barco",
+      "model": "F80-Q12",
+      "resolution": {
+        "width": 2560,
+        "height": 1600
+      },
+      "lumens": 12000,
+      "lenses": [
+        {
+          "name": "GLD 0.37-0.40:1 UST",
+          "throwMin": 0.37,
+          "throwMax": 0.4
+        },
+        {
+          "name": "FLDX 0.54:1 UST",
+          "throwMin": 0.54,
+          "throwMax": null
+        },
+        {
+          "name": "GLD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.06
+        },
+        {
+          "name": "GLD 1.0-1.35:1",
+          "throwMin": 1.0,
+          "throwMax": 1.43
+        },
+        {
+          "name": "GLD 1.35-2.0:1",
+          "throwMin": 1.35,
+          "throwMax": 2.12
+        },
+        {
+          "name": "GLD 2.0-3.0:1",
+          "throwMin": 2.0,
+          "throwMax": 3.18
+        },
+        {
+          "name": "FLDX 2.25-3.30:1",
+          "throwMin": 2.25,
+          "throwMax": 3.3
+        },
+        {
+          "name": "FLD+ 3.30-6.08:1",
+          "throwMin": 3.3,
+          "throwMax": 6.08
+        },
+        {
+          "name": "FLD 5.37-9.19:1",
+          "throwMin": 5.37,
+          "throwMax": 9.19
+        },
+        {
+          "name": "FLD 9.19-12.73:1",
+          "throwMin": 9.19,
+          "throwMax": 12.73
+        }
+      ]
+    },
+    {
+      "id": "barco-g62-w9",
+      "manufacturer": "Barco",
+      "model": "G62-W9",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 9500,
+      "lenses": [
+        {
+          "name": "G 0.36:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "G 0.37-0.4:1 UST",
+          "throwMin": 0.37,
+          "throwMax": 0.4
+        },
+        {
+          "name": "G 0.65-0.75:1",
+          "throwMin": 0.65,
+          "throwMax": 0.75
+        },
+        {
+          "name": "G 0.75-0.95:1",
+          "throwMin": 0.75,
+          "throwMax": 0.95
+        },
+        {
+          "name": "G 0.95-1.22:1",
+          "throwMin": 0.95,
+          "throwMax": 1.22
+        },
+        {
+          "name": "G 1.22-1.53:1",
+          "throwMin": 1.22,
+          "throwMax": 1.53
+        },
+        {
+          "name": "G 1.52-2.92:1",
+          "throwMin": 1.52,
+          "throwMax": 2.92
+        },
+        {
+          "name": "G 2.90-5.50:1",
+          "throwMin": 2.9,
+          "throwMax": 5.5
+        }
+      ]
+    },
+    {
+      "id": "barco-g62-w11",
+      "manufacturer": "Barco",
+      "model": "G62-W11",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 11000,
+      "lenses": [
+        {
+          "name": "G 0.36:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "G 0.37-0.4:1 UST",
+          "throwMin": 0.37,
+          "throwMax": 0.4
+        },
+        {
+          "name": "G 0.65-0.75:1",
+          "throwMin": 0.65,
+          "throwMax": 0.75
+        },
+        {
+          "name": "G 0.75-0.95:1",
+          "throwMin": 0.75,
+          "throwMax": 0.95
+        },
+        {
+          "name": "G 0.95-1.22:1",
+          "throwMin": 0.95,
+          "throwMax": 1.22
+        },
+        {
+          "name": "G 1.22-1.53:1",
+          "throwMin": 1.22,
+          "throwMax": 1.53
+        },
+        {
+          "name": "G 1.52-2.92:1",
+          "throwMin": 1.52,
+          "throwMax": 2.92
+        },
+        {
+          "name": "G 2.90-5.50:1",
+          "throwMin": 2.9,
+          "throwMax": 5.5
+        }
+      ]
+    },
+    {
+      "id": "barco-g62-w14",
+      "manufacturer": "Barco",
+      "model": "G62-W14",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 13600,
+      "lenses": [
+        {
+          "name": "G 0.36:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "G 0.37-0.4:1 UST",
+          "throwMin": 0.37,
+          "throwMax": 0.4
+        },
+        {
+          "name": "G 0.65-0.75:1",
+          "throwMin": 0.65,
+          "throwMax": 0.75
+        },
+        {
+          "name": "G 0.75-0.95:1",
+          "throwMin": 0.75,
+          "throwMax": 0.95
+        },
+        {
+          "name": "G 0.95-1.22:1",
+          "throwMin": 0.95,
+          "throwMax": 1.22
+        },
+        {
+          "name": "G 1.22-1.53:1",
+          "throwMin": 1.22,
+          "throwMax": 1.53
+        },
+        {
+          "name": "G 1.52-2.92:1",
+          "throwMin": 1.52,
+          "throwMax": 2.92
+        },
+        {
+          "name": "G 2.90-5.50:1",
+          "throwMin": 2.9,
+          "throwMax": 5.5
+        }
+      ]
+    },
+    {
+      "id": "barco-g100-w19",
+      "manufacturer": "Barco",
+      "model": "G100-W19",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 19000,
+      "lenses": [
+        {
+          "name": "FLDX 0.38:1 UST",
+          "throwMin": 0.38,
+          "throwMax": null
+        },
+        {
+          "name": "GC 0.65-0.75:1",
+          "throwMin": 0.65,
+          "throwMax": 0.75
+        },
+        {
+          "name": "GC 0.84-1.02:1",
+          "throwMin": 0.84,
+          "throwMax": 1.02
+        },
+        {
+          "name": "GC 1.02-1.36:1",
+          "throwMin": 1.02,
+          "throwMax": 1.36
+        },
+        {
+          "name": "GC 1.2-1.5:1",
+          "throwMin": 1.2,
+          "throwMax": 1.5
+        },
+        {
+          "name": "GC 1.5-2.0:1",
+          "throwMin": 1.5,
+          "throwMax": 2.0
+        },
+        {
+          "name": "GC 2.0-4.0:1",
+          "throwMin": 2.0,
+          "throwMax": 4.0
+        },
+        {
+          "name": "GC 4.0-7.2:1",
+          "throwMin": 4.0,
+          "throwMax": 7.2
+        },
+        {
+          "name": "GC 7.2-10.8:1",
+          "throwMin": 7.2,
+          "throwMax": 10.8
+        }
+      ]
+    },
+    {
+      "id": "barco-g100-w22",
+      "manufacturer": "Barco",
+      "model": "G100-W22",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 22000,
+      "lenses": [
+        {
+          "name": "FLDX 0.38:1 UST",
+          "throwMin": 0.38,
+          "throwMax": null
+        },
+        {
+          "name": "GC 0.65-0.75:1",
+          "throwMin": 0.65,
+          "throwMax": 0.75
+        },
+        {
+          "name": "GC 0.84-1.02:1",
+          "throwMin": 0.84,
+          "throwMax": 1.02
+        },
+        {
+          "name": "GC 1.02-1.36:1",
+          "throwMin": 1.02,
+          "throwMax": 1.36
+        },
+        {
+          "name": "GC 1.2-1.5:1",
+          "throwMin": 1.2,
+          "throwMax": 1.5
+        },
+        {
+          "name": "GC 1.5-2.0:1",
+          "throwMin": 1.5,
+          "throwMax": 2.0
+        },
+        {
+          "name": "GC 2.0-4.0:1",
+          "throwMin": 2.0,
+          "throwMax": 4.0
+        },
+        {
+          "name": "GC 4.0-7.2:1",
+          "throwMin": 4.0,
+          "throwMax": 7.2
+        },
+        {
+          "name": "GC 7.2-10.8:1",
+          "throwMin": 7.2,
+          "throwMax": 10.8
+        }
+      ]
+    },
+    {
+      "id": "barco-g100-w25",
+      "manufacturer": "Barco",
+      "model": "G100-W25",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 25000,
+      "lenses": [
+        {
+          "name": "FLDX 0.38:1 UST",
+          "throwMin": 0.38,
+          "throwMax": null
+        },
+        {
+          "name": "GC 0.65-0.75:1",
+          "throwMin": 0.65,
+          "throwMax": 0.75
+        },
+        {
+          "name": "GC++ 0.75-1.08:1",
+          "throwMin": 0.75,
+          "throwMax": 1.08
+        },
+        {
+          "name": "GC 0.84-1.02:1",
+          "throwMin": 0.84,
+          "throwMax": 1.02
+        },
+        {
+          "name": "GC++ 1.08-1.5:1",
+          "throwMin": 1.08,
+          "throwMax": 1.5
+        },
+        {
+          "name": "GC+ 1.2-1.5:1",
+          "throwMin": 1.2,
+          "throwMax": 1.5
+        },
+        {
+          "name": "GC+ 1.5-2.0:1",
+          "throwMin": 1.5,
+          "throwMax": 2.0
+        },
+        {
+          "name": "GC+ 2.0-4.0:1",
+          "throwMin": 2.0,
+          "throwMax": 4.0
+        },
+        {
+          "name": "GC+ 4.0-7.2:1",
+          "throwMin": 4.0,
+          "throwMax": 7.2
+        },
+        {
+          "name": "GC 7.2-10.8:1",
+          "throwMin": 7.2,
+          "throwMax": 10.8
+        }
+      ]
+    },
+    {
+      "id": "barco-i65-w10",
+      "manufacturer": "Barco",
+      "model": "I65-W10",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 10000,
+      "lenses": [
+        {
+          "name": "ILD 0.35:1 UST",
+          "throwMin": 0.35,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-i65-w13",
+      "manufacturer": "Barco",
+      "model": "I65-W13",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 12500,
+      "lenses": [
+        {
+          "name": "ILD 0.35:1 UST",
+          "throwMin": 0.35,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-i65-w16",
+      "manufacturer": "Barco",
+      "model": "I65-W16",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 15000,
+      "lenses": [
+        {
+          "name": "ILD 0.35:1 UST",
+          "throwMin": 0.35,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-i65-4k10",
+      "manufacturer": "Barco",
+      "model": "I65-4K10",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 10000,
+      "lenses": [
+        {
+          "name": "ILD 0.35:1 UST",
+          "throwMin": 0.35,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-i65-4k13",
+      "manufacturer": "Barco",
+      "model": "I65-4K13",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 12500,
+      "lenses": [
+        {
+          "name": "ILD 0.35:1 UST",
+          "throwMin": 0.35,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-i65-4k16",
+      "manufacturer": "Barco",
+      "model": "I65-4K16",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 15000,
+      "lenses": [
+        {
+          "name": "ILD 0.35:1 UST",
+          "throwMin": 0.35,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-i600-4k8",
+      "manufacturer": "Barco",
+      "model": "I600-4K8",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 8000,
+      "lenses": [
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-i600-4k10",
+      "manufacturer": "Barco",
+      "model": "I600-4K10",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 10000,
+      "lenses": [
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-i600-4k15",
+      "manufacturer": "Barco",
+      "model": "I600-4K15",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 14000,
+      "lenses": [
+        {
+          "name": "ILD 0.37:1 UST",
+          "throwMin": 0.37,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.5:1 UST",
+          "throwMin": 0.5,
+          "throwMax": null
+        },
+        {
+          "name": "ILD 0.65-0.8:1",
+          "throwMin": 0.65,
+          "throwMax": 0.8
+        },
+        {
+          "name": "ILD 0.8-1.0:1",
+          "throwMin": 0.8,
+          "throwMax": 1.0
+        },
+        {
+          "name": "ILD 1.0-1.4:1",
+          "throwMin": 1.0,
+          "throwMax": 1.4
+        },
+        {
+          "name": "ILD 1.4-2.1:1",
+          "throwMin": 1.4,
+          "throwMax": 2.1
+        },
+        {
+          "name": "ILD 2.1-4.0:1",
+          "throwMin": 2.1,
+          "throwMax": 4.0
+        },
+        {
+          "name": "ILD 4.0-7.4:1",
+          "throwMin": 4.0,
+          "throwMax": 7.4
+        }
+      ]
+    },
+    {
+      "id": "barco-hdx-w12",
+      "manufacturer": "Barco",
+      "model": "HDX-W12",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 12000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-hdx-w14",
+      "manufacturer": "Barco",
+      "model": "HDX-W14",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 14000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-hdx-w18",
+      "manufacturer": "Barco",
+      "model": "HDX-W18",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 18000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-hdx-w20-flex",
+      "manufacturer": "Barco",
+      "model": "HDX-W20 FLEX",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 20000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-hdx-4k12",
+      "manufacturer": "Barco",
+      "model": "HDX-4K12",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 11000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-hdx-4k14",
+      "manufacturer": "Barco",
+      "model": "HDX-4K14",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 13000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-hdx-4k20-flex",
+      "manufacturer": "Barco",
+      "model": "HDX-4K20 FLEX",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 19000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-rlm-w8",
+      "manufacturer": "Barco",
+      "model": "RLM-W8",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 8000,
+      "lenses": [
+        {
+          "name": "RLD W 0.77:1",
+          "throwMin": 0.77,
+          "throwMax": null
+        },
+        {
+          "name": "RLD W 1.16:1",
+          "throwMin": 1.16,
+          "throwMax": null
+        },
+        {
+          "name": "RLD W 1.45-1.74:1",
+          "throwMin": 1.45,
+          "throwMax": 1.74
+        },
+        {
+          "name": "RLD W 1.74-2.17:1",
+          "throwMin": 1.74,
+          "throwMax": 2.17
+        },
+        {
+          "name": "RLD W 2.17-2.90:1",
+          "throwMin": 2.17,
+          "throwMax": 2.9
+        },
+        {
+          "name": "RLD W 2.90-4.34:1",
+          "throwMin": 2.9,
+          "throwMax": 4.34
+        },
+        {
+          "name": "RLD W 4.34-6.76:1",
+          "throwMin": 4.34,
+          "throwMax": 6.76
+        }
+      ]
+    },
+    {
+      "id": "barco-rlm-w12",
+      "manufacturer": "Barco",
+      "model": "RLM-W12",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 11500,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-rlm-w14",
+      "manufacturer": "Barco",
+      "model": "RLM-W14",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 14500,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-rls-w12",
+      "manufacturer": "Barco",
+      "model": "RLS-W12",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 12000,
+      "lenses": [
+        {
+          "name": "J 0.84-1.03:1",
+          "throwMin": 0.84,
+          "throwMax": 1.03
+        },
+        {
+          "name": "J 1.25-1.48:1",
+          "throwMin": 1.25,
+          "throwMax": 1.48
+        },
+        {
+          "name": "J 1.56-1.85:1",
+          "throwMin": 1.56,
+          "throwMax": 1.85
+        },
+        {
+          "name": "J 1.85-2.4:1",
+          "throwMin": 1.85,
+          "throwMax": 2.4
+        },
+        {
+          "name": "J 2.4-4.0:1",
+          "throwMin": 2.4,
+          "throwMax": 4.0
+        },
+        {
+          "name": "J 4.0-7.0:1",
+          "throwMin": 4.0,
+          "throwMax": 7.0
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-w35",
+      "manufacturer": "Barco",
+      "model": "QDX-W35",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 35000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-w45",
+      "manufacturer": "Barco",
+      "model": "QDX-W45",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 45000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-4k35",
+      "manufacturer": "Barco",
+      "model": "QDX-4K35",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 35000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-4k45",
+      "manufacturer": "Barco",
+      "model": "QDX-4K45",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 45000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-n4k25",
+      "manufacturer": "Barco",
+      "model": "QDX-N4K25",
+      "resolution": {
+        "width": 4096,
+        "height": 2176
+      },
+      "lumens": 25000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.63,
+          "throwMax": 0.83
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.81,
+          "throwMax": 1.17
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.1,
+          "throwMax": 1.41
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.3,
+          "throwMax": 1.77
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.77,
+          "throwMax": 2.39
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.4,
+          "throwMax": 3.87
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 3.86,
+          "throwMax": 6.53
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.49,
+          "throwMax": 9.57
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-n4k35",
+      "manufacturer": "Barco",
+      "model": "QDX-N4K35",
+      "resolution": {
+        "width": 4096,
+        "height": 2176
+      },
+      "lumens": 35000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.63,
+          "throwMax": 0.83
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.81,
+          "throwMax": 1.17
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.1,
+          "throwMax": 1.41
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.3,
+          "throwMax": 1.77
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.77,
+          "throwMax": 2.39
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.4,
+          "throwMax": 3.87
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 3.86,
+          "throwMax": 6.53
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.49,
+          "throwMax": 9.57
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-n4k45",
+      "manufacturer": "Barco",
+      "model": "QDX-N4K45",
+      "resolution": {
+        "width": 4096,
+        "height": 2176
+      },
+      "lumens": 39000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.63,
+          "throwMax": 0.83
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.81,
+          "throwMax": 1.17
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.1,
+          "throwMax": 1.41
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.3,
+          "throwMax": 1.77
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.77,
+          "throwMax": 2.39
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.4,
+          "throwMax": 3.87
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 3.86,
+          "throwMax": 6.53
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.49,
+          "throwMax": 9.57
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-n4k25-rgb",
+      "manufacturer": "Barco",
+      "model": "QDX-N4K25 RGB",
+      "resolution": {
+        "width": 4096,
+        "height": 2176
+      },
+      "lumens": 25000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.63,
+          "throwMax": 0.83
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.81,
+          "throwMax": 1.17
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.1,
+          "throwMax": 1.41
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.3,
+          "throwMax": 1.77
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.77,
+          "throwMax": 2.39
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.4,
+          "throwMax": 3.87
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 3.86,
+          "throwMax": 6.53
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-n4k35-rgb",
+      "manufacturer": "Barco",
+      "model": "QDX-N4K35 RGB",
+      "resolution": {
+        "width": 4096,
+        "height": 2176
+      },
+      "lumens": 34000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.63,
+          "throwMax": 0.83
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.81,
+          "throwMax": 1.17
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.1,
+          "throwMax": 1.41
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.3,
+          "throwMax": 1.77
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.77,
+          "throwMax": 2.39
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 3.86,
+          "throwMax": 6.53
+        }
+      ]
+    },
+    {
+      "id": "barco-qdx-n4k45-rgb",
+      "manufacturer": "Barco",
+      "model": "QDX-N4K45 RGB",
+      "resolution": {
+        "width": 4096,
+        "height": 2176
+      },
+      "lumens": 38000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.36,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.63,
+          "throwMax": 0.83
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.81,
+          "throwMax": 1.17
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.1,
+          "throwMax": 1.41
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.3,
+          "throwMax": 1.77
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.77,
+          "throwMax": 2.39
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.4,
+          "throwMax": 3.87
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 3.86,
+          "throwMax": 6.53
+        }
+      ]
+    },
+    {
+      "id": "barco-udm-w15",
+      "manufacturer": "Barco",
+      "model": "UDM-W15",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 15000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udm-w19",
+      "manufacturer": "Barco",
+      "model": "UDM-W19",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 20000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udm-w22",
+      "manufacturer": "Barco",
+      "model": "UDM-W22",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 22000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udm-w30",
+      "manufacturer": "Barco",
+      "model": "UDM-W30",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 31000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udm-4k15",
+      "manufacturer": "Barco",
+      "model": "UDM-4K15",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 15000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-udm-4k22",
+      "manufacturer": "Barco",
+      "model": "UDM-4K22",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 22000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-udm-4k30",
+      "manufacturer": "Barco",
+      "model": "UDM-4K30",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 27000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-u32",
+      "manufacturer": "Barco",
+      "model": "UDX-U32",
+      "resolution": {
+        "width": 1600,
+        "height": 1200
+      },
+      "lumens": 30000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.47,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.8,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.8,
+          "throwMax": 1.05
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 1.04,
+          "throwMax": 1.49
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.36,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.4,
+          "throwMax": 1.8
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.78,
+          "throwMax": 2.27
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.26,
+          "throwMax": 3.06
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 3.07,
+          "throwMax": 4.96
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.94,
+          "throwMax": 8.36
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 8.32,
+          "throwMax": 12.35
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-u40",
+      "manufacturer": "Barco",
+      "model": "UDX-U40",
+      "resolution": {
+        "width": 1600,
+        "height": 1200
+      },
+      "lumens": 39000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.47,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.8,
+          "throwMax": 1.05
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 1.04,
+          "throwMax": 1.49
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.4,
+          "throwMax": 1.8
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.78,
+          "throwMax": 2.27
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.26,
+          "throwMax": 3.06
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 3.07,
+          "throwMax": 4.96
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.94,
+          "throwMax": 8.36
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 8.32,
+          "throwMax": 12.35
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-u45lc",
+      "manufacturer": "Barco",
+      "model": "UDX-U45LC",
+      "resolution": {
+        "width": 1600,
+        "height": 1200
+      },
+      "lumens": 45000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.47,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.8,
+          "throwMax": 1.05
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 1.04,
+          "throwMax": 1.49
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.4,
+          "throwMax": 1.8
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.78,
+          "throwMax": 2.27
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.26,
+          "throwMax": 3.06
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 3.07,
+          "throwMax": 4.96
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.94,
+          "throwMax": 8.36
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 8.32,
+          "throwMax": 12.35
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-w22",
+      "manufacturer": "Barco",
+      "model": "UDX-W22",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 21000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-w26",
+      "manufacturer": "Barco",
+      "model": "UDX-W26",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 26000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-w28",
+      "manufacturer": "Barco",
+      "model": "UDX-W28",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 30500,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-w32",
+      "manufacturer": "Barco",
+      "model": "UDX-W32",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 32000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.73:1",
+          "throwMin": 0.67,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.2:1",
+          "throwMin": 1.14,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-w40-flex",
+      "manufacturer": "Barco",
+      "model": "UDX-W40 FLEX",
+      "resolution": {
+        "width": 1920,
+        "height": 1200
+      },
+      "lumens": 40000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.39,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.67,
+          "throwMax": 0.88
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.86,
+          "throwMax": 1.25
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.17,
+          "throwMax": 1.5
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.39,
+          "throwMax": 1.89
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 1.89,
+          "throwMax": 2.55
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.56,
+          "throwMax": 4.13
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.12,
+          "throwMax": 6.97
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 6.92,
+          "throwMax": 10.21
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-4k22",
+      "manufacturer": "Barco",
+      "model": "UDX-4K22",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 20000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-4k26",
+      "manufacturer": "Barco",
+      "model": "UDX-4K26",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 25000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-4k28",
+      "manufacturer": "Barco",
+      "model": "UDX-4K28",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 30000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-4k32",
+      "manufacturer": "Barco",
+      "model": "UDX-4K32",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 31000,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    },
+    {
+      "id": "barco-udx-4k40-flex",
+      "manufacturer": "Barco",
+      "model": "UDX-4K40 FLEX",
+      "resolution": {
+        "width": 3840,
+        "height": 2400
+      },
+      "lumens": 37500,
+      "lenses": [
+        {
+          "name": "TLD+ 0.37:1 UST",
+          "throwMin": 0.42,
+          "throwMax": null
+        },
+        {
+          "name": "TLD+ 0.65-0.85:1",
+          "throwMin": 0.71,
+          "throwMax": 0.93
+        },
+        {
+          "name": "TLD+ 0.8-1.16:1",
+          "throwMin": 0.93,
+          "throwMax": 1.33
+        },
+        {
+          "name": "TLD+ 1.25-1.6:1",
+          "throwMin": 1.25,
+          "throwMax": 1.6
+        },
+        {
+          "name": "TLD+ 1.5-2.0:1",
+          "throwMin": 1.49,
+          "throwMax": 2.03
+        },
+        {
+          "name": "TLD+ 2.0-2.8:1",
+          "throwMin": 2.02,
+          "throwMax": 2.73
+        },
+        {
+          "name": "TLD+ 2.8-4.5:1",
+          "throwMin": 2.74,
+          "throwMax": 4.43
+        },
+        {
+          "name": "TLD+ 4.5-7.5:1",
+          "throwMin": 4.42,
+          "throwMax": 7.46
+        },
+        {
+          "name": "TLD+ 7.5-11.5:1",
+          "throwMin": 7.41,
+          "throwMax": 11.03
+        }
+      ]
+    }
   ],
-  "updated" : "2026-10-12",
-  "version" : 1
+  "updated": "2026-10-13",
+  "version": 2
 }

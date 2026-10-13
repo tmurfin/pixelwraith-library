@@ -205,8 +205,8 @@
         "width" : 104
       },
       "tileSize" : {
-        "height" : 609.6,
-        "width" : 609.6
+        "height" : 600,
+        "width" : 600
       },
       "transparency" : null
     },
@@ -950,7 +950,7 @@
         "height" : 1200,
         "width" : 600
       },
-      "transparency" : null
+      "transparency" : 23
     },
     {
       "id" : "roe-cb8-mk-ii-half",
@@ -964,35 +964,7 @@
         "height" : 600,
         "width" : 600
       },
-      "transparency" : null
-    },
-    {
-      "id" : "roe-cb8-mk-ii-transparent",
-      "manufacturer" : "ROE",
-      "model" : "CB8 MK II Transparent",
-      "tileResolution" : {
-        "height" : 144,
-        "width" : 72
-      },
-      "tileSize" : {
-        "height" : 1200,
-        "width" : 600
-      },
-      "transparency" : null
-    },
-    {
-      "id" : "roe-cb8-mk-ii-transparent-half",
-      "manufacturer" : "ROE",
-      "model" : "CB8 MK II Transparent Half",
-      "tileResolution" : {
-        "height" : 72,
-        "width" : 72
-      },
-      "tileSize" : {
-        "height" : 600,
-        "width" : 600
-      },
-      "transparency" : null
+      "transparency" : 23
     },
     {
       "id" : "roe-dm2-6",
@@ -1791,8 +1763,750 @@
         "width" : 500
       },
       "transparency" : null
+    },
+    {
+      "id" : "roe-cb3-half",
+      "manufacturer" : "ROE",
+      "model" : "CB3 Half",
+      "tileResolution" : {
+        "height" : 160,
+        "width" : 160
+      },
+      "tileSize" : {
+        "height" : 600,
+        "width" : 600
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-cb5-half",
+      "manufacturer" : "ROE",
+      "model" : "CB5 Half",
+      "tileResolution" : {
+        "height" : 104,
+        "width" : 104
+      },
+      "tileSize" : {
+        "height" : 600,
+        "width" : 600
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-cb8-half",
+      "manufacturer" : "ROE",
+      "model" : "CB8 Half",
+      "tileResolution" : {
+        "height" : 72,
+        "width" : 72
+      },
+      "tileSize" : {
+        "height" : 600,
+        "width" : 600
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-cb8-transparent",
+      "manufacturer" : "ROE",
+      "model" : "CB8 Transparent",
+      "tileResolution" : {
+        "height" : 144,
+        "width" : 72
+      },
+      "tileSize" : {
+        "height" : 1200,
+        "width" : 600
+      },
+      "transparency" : 23
+    },
+    {
+      "id" : "roe-cb8-transparent-half",
+      "manufacturer" : "ROE",
+      "model" : "CB8 Transparent Half",
+      "tileResolution" : {
+        "height" : 72,
+        "width" : 72
+      },
+      "tileSize" : {
+        "height" : 600,
+        "width" : 600
+      },
+      "transparency" : 23
+    },
+    {
+      "id" : "roe-ob2-6",
+      "manufacturer" : "ROE",
+      "model" : "OB2.6",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm2-matte",
+      "manufacturer" : "ROE",
+      "model" : "BM2-Matte",
+      "tileResolution" : {
+        "height" : 216,
+        "width" : 216
+      },
+      "tileSize" : {
+        "height" : 609.6,
+        "width" : 609.6
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm2v2-pc-matte-black-led",
+      "manufacturer" : "ROE",
+      "model" : "BM2V2-PC Matte (Black LED)",
+      "tileResolution" : {
+        "height" : 216,
+        "width" : 216
+      },
+      "tileSize" : {
+        "height" : 609.6,
+        "width" : 609.6
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm2v2-pc-matte-white-led",
+      "manufacturer" : "ROE",
+      "model" : "BM2V2-PC Matte (White LED)",
+      "tileResolution" : {
+        "height" : 216,
+        "width" : 216
+      },
+      "tileSize" : {
+        "height" : 609.6,
+        "width" : 609.6
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm4-glass",
+      "manufacturer" : "ROE",
+      "model" : "BM4-Glass",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 609.6,
+        "width" : 609.6
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm4-matte",
+      "manufacturer" : "ROE",
+      "model" : "BM4-Matte",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 609.6,
+        "width" : 609.6
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "roe-bm4-mirror",
+      "manufacturer" : "ROE",
+      "model" : "BM4-Mirror",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 609.6,
+        "width" : 609.6
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "planar-cli1-5",
+      "manufacturer" : "Planar",
+      "model" : "CLI1.5",
+      "tileResolution" : {
+        "height" : 320,
+        "width" : 320
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "planar-cli1-9-f",
+      "manufacturer" : "Planar",
+      "model" : "CLI1.9-F",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "planar-cli2-6-f",
+      "manufacturer" : "Planar",
+      "model" : "CLI2.6-F",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "planar-cli3-9-f",
+      "manufacturer" : "Planar",
+      "model" : "CLI3.9-F",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "planar-cli5-2-f",
+      "manufacturer" : "Planar",
+      "model" : "CLI5.2-F",
+      "tileResolution" : {
+        "height" : 96,
+        "width" : 96
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-ar3-9-ad",
+      "manufacturer" : "Infiled",
+      "model" : "AR3.9 AD",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-ar3-9-ls",
+      "manufacturer" : "Infiled",
+      "model" : "AR3.9 LS",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-ar3-9-vss",
+      "manufacturer" : "Infiled",
+      "model" : "AR3.9 VSS",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-ar5-9-ad",
+      "manufacturer" : "Infiled",
+      "model" : "AR5.9 AD",
+      "tileResolution" : {
+        "height" : 168,
+        "width" : 84
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-ar5-9-ls",
+      "manufacturer" : "Infiled",
+      "model" : "AR5.9 LS",
+      "tileResolution" : {
+        "height" : 168,
+        "width" : 84
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-ar5-9-vss",
+      "manufacturer" : "Infiled",
+      "model" : "AR5.9 VSS",
+      "tileResolution" : {
+        "height" : 168,
+        "width" : 84
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-ar5-9-rgbw",
+      "manufacturer" : "Infiled",
+      "model" : "AR5.9 RGBW",
+      "tileResolution" : {
+        "height" : 168,
+        "width" : 84
+      },
+      "tileSize" : {
+        "height" : 1000,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db1-56m4-vss",
+      "manufacturer" : "Infiled",
+      "model" : "DB1.56m4 VSS",
+      "tileResolution" : {
+        "height" : 320,
+        "width" : 320
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db1-56mk2-mt2-cbsf",
+      "manufacturer" : "Infiled",
+      "model" : "DB1.56mk2 MT2 CBSF",
+      "tileResolution" : {
+        "height" : 320,
+        "width" : 320
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db1-9-vss",
+      "manufacturer" : "Infiled",
+      "model" : "DB1.9 VSS",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db1-95-vss-m2",
+      "manufacturer" : "Infiled",
+      "model" : "DB1.95 VSS M2",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db1-95mk2-m2-cbsf",
+      "manufacturer" : "Infiled",
+      "model" : "DB1.95mk2 M2 CBSF",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db2-6-ad",
+      "manufacturer" : "Infiled",
+      "model" : "DB2.6 AD",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db2-6-vss",
+      "manufacturer" : "Infiled",
+      "model" : "DB2.6 VSS",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db2-6mk2-mt2-cbsf",
+      "manufacturer" : "Infiled",
+      "model" : "DB2.6mk2 MT2 CBSF",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-db2-8-vss",
+      "manufacturer" : "Infiled",
+      "model" : "DB2.8 VSS",
+      "tileResolution" : {
+        "height" : 176,
+        "width" : 176
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x1-95mk2-m2-ultra",
+      "manufacturer" : "Infiled",
+      "model" : "X1.95mk2 M2 Ultra",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x1-95mk2",
+      "manufacturer" : "Infiled",
+      "model" : "X1.95mk2",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x1-9mk2-m2",
+      "manufacturer" : "Infiled",
+      "model" : "X1.9mk2 M2",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x1-9mk2-m2-cbsf",
+      "manufacturer" : "Infiled",
+      "model" : "X1.9mk2 M2 CBSF",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x1-9mk2-vss",
+      "manufacturer" : "Infiled",
+      "model" : "X1.9mk2 VSS",
+      "tileResolution" : {
+        "height" : 256,
+        "width" : 256
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x2-6mk2-ls",
+      "manufacturer" : "Infiled",
+      "model" : "X2.6mk2 LS",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x2-6mk2-mt2-cbsf",
+      "manufacturer" : "Infiled",
+      "model" : "X2.6mk2 MT2 CBSF",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x2-6mk2-mt2-ultra",
+      "manufacturer" : "Infiled",
+      "model" : "X2.6mk2 MT2 Ultra",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x2-6mk2-pro",
+      "manufacturer" : "Infiled",
+      "model" : "X2.6mk2 Pro",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x2-6mk2-vss",
+      "manufacturer" : "Infiled",
+      "model" : "X2.6mk2 VSS",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x2-6mk2",
+      "manufacturer" : "Infiled",
+      "model" : "X2.6mk2",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x2-9mk2-pro",
+      "manufacturer" : "Infiled",
+      "model" : "X2.9mk2 Pro",
+      "tileResolution" : {
+        "height" : 168,
+        "width" : 168
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x2-9mk2",
+      "manufacturer" : "Infiled",
+      "model" : "X2.9mk2",
+      "tileResolution" : {
+        "height" : 168,
+        "width" : 168
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x3-9mk2-pro",
+      "manufacturer" : "Infiled",
+      "model" : "X3.9mk2 Pro",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-x3-9mk2",
+      "manufacturer" : "Infiled",
+      "model" : "X3.9mk2",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-df2-6mk2-vss",
+      "manufacturer" : "Infiled",
+      "model" : "DF2.6mk2 VSS",
+      "tileResolution" : {
+        "height" : 192,
+        "width" : 192
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-df3-9mk2-ad",
+      "manufacturer" : "Infiled",
+      "model" : "DF3.9mk2 AD",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-df3-9mk2-ls",
+      "manufacturer" : "Infiled",
+      "model" : "DF3.9mk2 LS",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-df3-9mk2-vss",
+      "manufacturer" : "Infiled",
+      "model" : "DF3.9mk2 VSS",
+      "tileResolution" : {
+        "height" : 128,
+        "width" : 128
+      },
+      "tileSize" : {
+        "height" : 500,
+        "width" : 500
+      },
+      "transparency" : null
+    },
+    {
+      "id" : "infiled-titan-x8",
+      "manufacturer" : "Infiled",
+      "model" : "Titan X8",
+      "tileResolution" : {
+        "height" : 144,
+        "width" : 144
+      },
+      "tileSize" : {
+        "height" : 1200,
+        "width" : 1200
+      },
+      "transparency" : 70
     }
   ],
   "updated" : "2026-10-13",
-  "version" : 2
+  "version" : 3
 }
