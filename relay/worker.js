@@ -17,6 +17,13 @@ export async function handle(request, env, githubFetch = fetch) {
   try { submission = JSON.parse(text); } catch { return json(400, { error: "not JSON" }); }
   const problem = validate(submission);
   if (problem) return json(400, { error: problem });
+  // Ten submissions a minute per address (the RATE_LIMITER binding in wrangler.toml); over that, 429, which the
+  // app treats as "try again later"
+  if (env.RATE_LIMITER) {
+    const key = request.headers.get("cf-connecting-ip") || "unknown";
+    const { success } = await env.RATE_LIMITER.limit({ key });
+    if (!success) return json(429, { error: "too many submissions from this address; try again in a minute" });
+  }
   const answer = await githubFetch(`https://api.github.com/repos/${REPOSITORY}/issues`, {
     method: "POST",
     headers: {

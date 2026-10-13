@@ -31,6 +31,21 @@ test("bad shapes are refused before GitHub is called", async () => {
   assert.equal(calls.length, 0);
 });
 
+test("the rate limiter answers 429 before GitHub is called, keyed by the client address", async () => {
+  calls.length = 0;
+  const keys = [];
+  const limiter = { limit: async ({ key }) => { keys.push(key); return { success: false }; } };
+  const limited = new Request("https://relay.test/submit", { method: "POST", body: JSON.stringify(good), headers: { "cf-connecting-ip": "203.0.113.7" } });
+  const answer = await handle(limited, { ...env, RATE_LIMITER: limiter }, github(201, {}));
+  assert.equal(answer.status, 429);
+  assert.deepEqual(await answer.json(), { error: "too many submissions from this address; try again in a minute" });
+  assert.deepEqual(keys, ["203.0.113.7"]);
+  assert.equal(calls.length, 0);
+  const allowed = { limit: async () => ({ success: true }) };
+  const ok = await handle(request(good), { ...env, RATE_LIMITER: allowed }, github(201, { number: 1, html_url: "u" }));
+  assert.equal(ok.status, 201);
+});
+
 test("a good submission opens the issue with the labels and the body unchanged", async () => {
   calls.length = 0;
   const answer = await handle(request(good), env, github(201, { number: 12, html_url: "https://github.com/tmurfin/pixelwraith-library/issues/12" }));

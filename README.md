@@ -102,7 +102,8 @@ that window still sees the old version and reads "Up to date"; check again a few
 
 ## Relay
 
-`relay/` holds the Cloudflare Worker the app submits through, its test and the deploy steps. `node --test
+`relay/` holds the Cloudflare Worker the app submits through, its test, its rate limit (ten submissions a minute
+per address) and the deploy steps. `node --test
 relay/worker.test.mjs` runs its test; the push workflow runs it too.
 
 ## Scripts
