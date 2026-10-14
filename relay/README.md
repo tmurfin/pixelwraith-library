@@ -9,7 +9,7 @@ hand-filed one, so `scripts/merge.py` reads it unchanged.
 `POST /submit` with JSON `{ "kind": "tile" | "projector", "title": "…", "body": "…" }` answers
 `201 { "number": 12, "url": "https://github.com/tmurfin/pixelwraith-library/issues/12" }`. A bad request answers
 `400 { "error": "…" }` before GitHub is called (wrong kind, title outside 1–200 characters, body outside 1–20,000
-characters or without a ```json block, anything over 32 KB); `429 { "error": "…" }` past ten submissions a minute
+characters or without a ```json block, anything over 32 KB); `429 { "error": "…" }` past sixty posts a minute
 from one address (the rate-limit binding in `wrangler.toml`); any other method `405`, any other path `404`;
 GitHub rejecting the item (422, 404…) answers `400 { "error": "GitHub refused it: …" }`; GitHub unavailable, the
 token lapsed or rate limited (5xx, 401, 403, 429) answers `502 { "error": "GitHub answered 503" }`. The app marks
@@ -21,6 +21,15 @@ then updates that issue's title and body, reopens it, leaves the comment "Update
 `200 { "number", "url", "key" }`. The key is the HMAC-SHA256 of the number under the worker secret
 `SIGNING_SECRET`, so only the app that made a submission can change it; a wrong key, or a worker without the
 secret, answers `403 { "error": "not this app's submission" }`, and the app then opens a new issue instead.
+
+`POST /status` with `{ "issues": [ { "number": 12, "key": "…" } ] }` (up to 25) answers, for each reference whose
+key is this worker's, `{ "number", "state", "needsChanges", "comment" }`: GitHub's `open` or `closed` (`gone`
+when the issue was deleted), whether the `needs-changes` label is on, and the latest comment by the repository's
+owner, a member or a collaborator that is not the app's own "Updated from the app." (the repository is public, so
+a stranger's comment never reaches the app). Wrong keys and GitHub failures leave the issue out; an issue
+without comments costs one GitHub call, with comments two. The app checks at launch and on Settings ▸ Check
+Now; `/status` has its own limiter, ten a minute per address. An update also resets the issue's labels to `submission` and the kind, taking
+`needs-changes` off.
 
 ## Deploying (maintainer, once)
 
@@ -34,8 +43,8 @@ secret, answers `403 { "error": "not this app's submission" }`, and the app then
 4. The deploy prints the `workers.dev` URL; put `https://<that host>/submit` in `LibrarySubmission.endpoint` in
    the app and ship it. The rate limit needs no dashboard step: the binding in `wrangler.toml` deploys with the
    worker (Wrangler 4.36 or newer). Cloudflare counts it per edge server and calls it approximate: a burst over one
-   connection trips at exactly ten, while requests spread over many connections can exceed it. To check it after a
-   deploy, send thirty empty POSTs over one reused connection (`curl -X POST -d '{}' <url> <url> …`): ten answer
+   connection trips at exactly sixty, while requests spread over many connections can exceed it. To check it after a
+   deploy, send eighty empty POSTs over one reused connection (`curl -X POST -d '{}' <url> <url> …`): sixty answer
    400, the rest 429. Empty POSTs never reach GitHub.
 
 Issues the relay opens are authored by the token's account. Cost: the Workers free plan allows 100,000

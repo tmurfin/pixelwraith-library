@@ -104,7 +104,7 @@ test("an update with the right key patches the issue open, comments, and answers
   assert.equal(calls.length, 2);
   assert.equal(calls[0].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12");
   assert.equal(calls[0].init.method, "PATCH");
-  assert.deepEqual(JSON.parse(calls[0].init.body), { title: good.title, body: good.body, state: "open" });
+  assert.deepEqual(JSON.parse(calls[0].init.body), { title: good.title, body: good.body, state: "open", labels: ["submission", "projector"] });
   assert.equal(calls[1].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12/comments");
   assert.deepEqual(JSON.parse(calls[1].init.body), { body: "Updated from the app." });
 });
@@ -155,4 +155,69 @@ test("GitHub rejecting or failing an update maps like a create", async () => {
   assert.deepEqual(await rejected.json(), { error: "GitHub refused it: Validation Failed" });
   const down = await handle(request({ ...good, issue: { number: 12, key: expectedKey } }), signed, github(503, {}));
   assert.equal(down.status, 502);
+});
+
+const statusRequest = (issues) => new Request("https://relay.test/status", { method: "POST", body: JSON.stringify({ issues }) });
+const ghStatus = (issueBody, comments, issueStatus = 200) => async (url, init) => {
+  calls.push({ url, init });
+  if (url.endsWith("/comments?per_page=100")) return new Response(JSON.stringify(comments), { status: 200 });
+  return new Response(JSON.stringify({ comments: comments.length, ...issueBody }), { status: issueStatus });
+};
+const owner = (body) => ({ body, author_association: "OWNER" });
+const stranger = (body) => ({ body, author_association: "NONE" });
+
+test("status answers state, the label and the latest maintainer comment, skipping the app's own", async () => {
+  calls.length = 0;
+  const gh = ghStatus({ number: 12, state: "open", labels: [{ name: "submission" }, { name: "needs-changes" }] },
+                      [owner("First look"), owner("Updated from the app."), owner("Add the pitch"), owner("Updated from the app."), stranger("Buy my tiles")]);
+  const answer = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, gh);
+  assert.equal(answer.status, 200);
+  assert.deepEqual(await answer.json(), { issues: [{ number: 12, state: "open", needsChanges: true, comment: "Add the pitch" }] });
+  assert.equal(calls[0].init.method ?? "GET", "GET");
+  assert.equal(calls[0].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12");
+  assert.equal(calls[1].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12/comments?per_page=100");
+});
+
+test("status asks for comments only when the issue has some, and counts only the maintainer's", async () => {
+  calls.length = 0;
+  const none = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, []));
+  assert.deepEqual(await none.json(), { issues: [{ number: 12, state: "open", needsChanges: false, comment: null }] });
+  assert.equal(calls.length, 1, "no comments fetch for an issue without comments");
+  const strangers = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [{ name: "needs-changes" }] }, [stranger("Spam"), { body: "Hi", author_association: "CONTRIBUTOR" }]));
+  assert.deepEqual(await strangers.json(), { issues: [{ number: 12, state: "open", needsChanges: true, comment: null }] });
+  const member = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, [{ body: "From a collaborator", author_association: "COLLABORATOR" }, stranger("later noise")]));
+  assert.deepEqual(await member.json(), { issues: [{ number: 12, state: "open", needsChanges: false, comment: "From a collaborator" }] });
+});
+
+test("a tighter limiter guards /status when one is bound", async () => {
+  const limited = { limit: async () => ({ success: false }) };
+  const answer = await handle(statusRequest([{ number: 12, key: expectedKey }]), { ...signed, RATE_LIMITER: { limit: async () => ({ success: true }) }, STATUS_LIMITER: limited }, ghStatus({}, []));
+  assert.equal(answer.status, 429);
+  const submit = await handle(request(good), { ...signed, RATE_LIMITER: { limit: async () => ({ success: true }) }, STATUS_LIMITER: limited }, github(201, { number: 1, html_url: "u" }));
+  assert.equal(submit.status, 201, "the status limiter does not touch /submit");
+});
+
+test("status: no comment, closed, gone, a wrong key, a GitHub failure", async () => {
+  const plain = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "closed", labels: [] }, []));
+  assert.deepEqual(await plain.json(), { issues: [{ number: 12, state: "closed", needsChanges: false, comment: null }] });
+  const gone = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({}, [], 404));
+  assert.deepEqual(await gone.json(), { issues: [{ number: 12, state: "gone", needsChanges: false, comment: null }] });
+  calls.length = 0;
+  const wrong = await handle(statusRequest([{ number: 12, key: "nope" }, { number: 13, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, []));
+  assert.deepEqual(await wrong.json(), { issues: [] }, "a wrong key and a key for another number are both left out");
+  assert.equal(calls.length, 0);
+  const failing = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({}, [], 503));
+  assert.deepEqual(await failing.json(), { issues: [] }, "a GitHub failure leaves the issue out");
+  const noSecret = await handle(statusRequest([{ number: 12, key: expectedKey }]), env, ghStatus({ number: 12, state: "open", labels: [] }, []));
+  assert.deepEqual(await noSecret.json(), { issues: [] });
+});
+
+test("status refuses a bad list before GitHub", async () => {
+  calls.length = 0;
+  assert.equal((await handle(statusRequest([]), signed, ghStatus({}, []))).status, 400);
+  assert.equal((await handle(statusRequest(Array.from({ length: 26 }, (_, i) => ({ number: i + 1, key: "k" }))), signed, ghStatus({}, []))).status, 400);
+  assert.equal((await handle(statusRequest([{ number: "12", key: "k" }]), signed, ghStatus({}, []))).status, 400);
+  assert.equal((await handle(new Request("https://relay.test/status", { method: "POST", body: "{}" }), signed, ghStatus({}, []))).status, 400);
+  assert.equal((await handle(new Request("https://relay.test/status", { method: "GET" }), signed, ghStatus({}, []))).status, 405);
+  assert.equal(calls.length, 0);
 });

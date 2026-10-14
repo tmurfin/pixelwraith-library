@@ -23,6 +23,11 @@ You can also open a new issue by hand from the Tile or Projector template and fi
 - Clone this repository and open a terminal **at its root** (the folder that holds `tiles.json`). Every command
   below runs from there; from any other folder the script path is wrong.
 - Install the GitHub CLI and sign in: `gh auth login`.
+- Create the label the refuse step uses, once per repository:
+
+  ```
+  gh label create needs-changes --description "Sent back to the submitter" --color d93f0b
+  ```
 - Python 3 is the only other requirement.
 
 ### Each submission
@@ -42,6 +47,17 @@ You can also open a new issue by hand from the Tile or Projector template and fi
    ```
 	gh issue view #
    ```
+
+   To send it back for changes, add the label `needs-changes` and write a comment saying what to fix:
+
+   ```
+   gh issue edit 12 --add-label needs-changes
+   gh issue comment 12 --body "Add the pitch to the model name"
+   ```
+
+   The submitter sees the comment in the app at their next check, edits the entry and resubmits, which reopens
+   the issue, takes the label off and comments "Updated from the app." To decline for good, close the issue
+   without the label and say why in a comment.
 
 3. Merge it. Replace `12` with the issue's number and the last word with the kind, `tiles` for a tile or
    `projectors` for a projector:
@@ -103,7 +119,7 @@ that window still sees the old version and reads "Up to date"; check again a few
 
 ## Relay
 
-`relay/` holds the Cloudflare Worker the app submits through, its test, its rate limit (ten submissions a minute
+`relay/` holds the Cloudflare Worker the app submits through, its test, its rate limit (sixty posts a minute
 per address) and the deploy steps. `node --test
 relay/worker.test.mjs` runs its test; the push workflow runs it too.
 

@@ -2,8 +2,14 @@ name = "pixelwraith-library-submit"
 main = "worker.js"
 compatibility_date = "2026-10-01"
 
-# Ten submissions a minute per client address; the worker answers 429 above that
+# Sixty posts a minute per client address; the worker answers 429 above that
 [[ratelimits]]
 name = "RATE_LIMITER"
 namespace_id = "1001"
+simple = { limit = 60, period = 60 }
+
+# Status checks cost GitHub calls: ten a minute per address is plenty for an app's launch and Check Now
+[[ratelimits]]
+name = "STATUS_LIMITER"
+namespace_id = "1002"
 simple = { limit = 10, period = 60 }
