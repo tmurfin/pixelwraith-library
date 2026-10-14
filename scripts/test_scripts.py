@@ -125,7 +125,8 @@ if args[:2] == ["label", "list"]:
     print(json.dumps(json.load(open(os.path.join(here, "labels.json"))))); sys.exit(0)
 if args[:2] == ["issue", "list"]:
     label = args[args.index("--label") + 1]
-    print(json.dumps([i for i in issues if label in i["labels"] and not i.get("closed")])); sys.exit(0)
+    source = json.load(open(os.path.join(here, "stale.json"))) if os.path.exists(os.path.join(here, "stale")) else issues
+    print(json.dumps([i for i in source if label in i["labels"] and not i.get("closed")])); sys.exit(0)
 if args[:2] == ["issue", "edit"]:
     issue = next(i for i in issues if str(i["number"]) == args[2])
     if "--add-label" in args: issue["labels"].append(args[args.index("--add-label") + 1])
@@ -251,5 +252,18 @@ json.dump(issues, open(path, "w"))
     issues_after = json.load(open(os.path.join(fake_dir, "issues.json")))
     check(r.returncode != 0 and "push" in r.stderr and not any(c.startswith("issue close") for c in gh_calls()) and "merged" in issues_after[0]["labels"], "driver: a failed push exits non-zero, closes nothing, the issue keeps merged")
     check("Traceback" not in r.stderr, "driver: a git failure is a message, not a traceback")
+
+    # GitHub's listing can lag a label change by seconds: this run's issues are closed from the driver's own
+    # record, not from a fresh listing (the first live run after this was written missed its closes that way)
+    stale_issues = [{"number": 43, "title": "Tile: Absen PL7", "body": body_for("Absen", "PL7"), "labels": ["approved"]}]
+    json.dump(stale_issues, open(os.path.join(fake_dir, "issues.json"), "w"))
+    json.dump(stale_issues, open(os.path.join(fake_dir, "stale.json"), "w"))   # what a lagging listing would still show
+    open(os.path.join(fake_dir, "stale"), "w").close()
+    reset_logs()
+    tiles_v = json.load(open(os.path.join(tmp, "tiles.json")))["version"]
+    r = run(driver, cwd=tmp)
+    calls = gh_calls()
+    check(r.returncode == 0 and f"issue close 43 --comment Added in version {tiles_v + 1}" in calls and "issue edit 43 --remove-label merged" in calls, "driver: this run's issues are closed even when the listing still shows them as approved")
+    os.remove(os.path.join(fake_dir, "stale"))
 print("ALL PASS" if fails == 0 else f"{fails} FAILED")
 sys.exit(0 if fails == 0 else 1)

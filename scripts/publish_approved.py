@@ -108,11 +108,20 @@ def run(argv):
     else:
         print("nothing to publish")
 
-    # Close what is published: this run's merged issues and any left by an earlier run, when the entry is there
+    # Close what is published. This run's issues are closed from the driver's own record, since GitHub's listing
+    # can lag a label change by seconds; the listing serves only for issues left `merged` by an earlier run
     files = {kind: json.load(open(os.path.join(ROOT, f"{kind}.json"))) for kind in ("tiles", "projectors")}
+    closed = set()
+    for kind, numbers in gained.items():
+        for number in numbers:
+            tools.gh("issue", "close", number, "--comment", f"Added in version {versions[kind]}")
+            tools.gh("issue", "edit", number, "--remove-label", "merged")
+            closed.add(number)
     merged = json.loads(tools.gh("issue", "list", "--label", "merged", "--state", "open", "--limit", "100", "--json", "number,title,body"))
     for issue in sorted(merged, key=lambda i: i["number"]):
         number = str(issue["number"])
+        if number in closed:
+            continue
         kind = kind_of(issue.get("title", ""))
         wanted = entry_id(issue.get("body", ""))
         present = kind is not None and wanted is not None and any(e["id"] == wanted for e in files[kind]["entries"])
