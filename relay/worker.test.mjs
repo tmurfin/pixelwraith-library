@@ -76,3 +76,83 @@ test("GitHub being unavailable, or the token lapsing, becomes 502, so the app tr
   assert.equal((await handle(request(good), env, github(403, { message: "rate limited" }))).status, 502);
   assert.equal((await handle(request(good), env, github(429, {}))).status, 502);
 });
+
+import { createHmac } from "node:crypto";
+import { sign } from "./worker.js";
+
+const signed = { ...env, SIGNING_SECRET: "s3cret" };
+const expectedKey = createHmac("sha256", "s3cret").update("12").digest("hex");
+
+test("a create answers the issue's key, the HMAC of its number under the signing secret", async () => {
+  assert.equal(await sign("s3cret", 12), expectedKey);
+  const answer = await handle(request(good), signed, github(201, { number: 12, html_url: "u12" }));
+  assert.deepEqual(await answer.json(), { number: 12, url: "u12", key: expectedKey });
+  const unsigned = await handle(request(good), env, github(201, { number: 12, html_url: "u12" }));
+  assert.deepEqual(await unsigned.json(), { number: 12, url: "u12" });
+});
+
+test("an update with the right key patches the issue open, comments, and answers 200", async () => {
+  calls.length = 0;
+  const gh = async (url, init) => {
+    calls.push({ url, init });
+    if (init.method === "PATCH") return new Response(JSON.stringify({ number: 12, html_url: "u12" }), { status: 200 });
+    return new Response(JSON.stringify({ id: 1 }), { status: 201 });
+  };
+  const answer = await handle(request({ ...good, issue: { number: 12, key: expectedKey } }), signed, gh);
+  assert.equal(answer.status, 200);
+  assert.deepEqual(await answer.json(), { number: 12, url: "u12", key: expectedKey });
+  assert.equal(calls.length, 2);
+  assert.equal(calls[0].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12");
+  assert.equal(calls[0].init.method, "PATCH");
+  assert.deepEqual(JSON.parse(calls[0].init.body), { title: good.title, body: good.body, state: "open" });
+  assert.equal(calls[1].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12/comments");
+  assert.deepEqual(JSON.parse(calls[1].init.body), { body: "Updated from the app." });
+});
+
+test("a failed comment does not fail the update", async () => {
+  const gh = async (url, init) => init.method === "PATCH"
+    ? new Response(JSON.stringify({ number: 12, html_url: "u12" }), { status: 200 })
+    : new Response("", { status: 500 });
+  assert.equal((await handle(request({ ...good, issue: { number: 12, key: expectedKey } }), signed, gh)).status, 200);
+});
+
+test("a wrong key, or no signing secret, answers 403 without touching GitHub", async () => {
+  calls.length = 0;
+  const wrong = await handle(request({ ...good, issue: { number: 12, key: "nope" } }), signed, github(200, {}));
+  assert.equal(wrong.status, 403);
+  assert.deepEqual(await wrong.json(), { error: "not this app's submission" });
+  const other = await handle(request({ ...good, issue: { number: 13, key: expectedKey } }), signed, github(200, {}));
+  assert.equal(other.status, 403);
+  const noSecret = await handle(request({ ...good, issue: { number: 12, key: expectedKey } }), env, github(200, {}));
+  assert.equal(noSecret.status, 403);
+  assert.equal(calls.length, 0);
+});
+
+test("a malformed issue reference is a bad request", async () => {
+  assert.equal(validate({ ...good, issue: { number: "12", key: "k" } }), "issue must have a number and a key");
+  assert.equal(validate({ ...good, issue: { number: 0, key: "k" } }), "issue must have a number and a key");
+  assert.equal(validate({ ...good, issue: { number: 12 } }), "issue must have a number and a key");
+  assert.equal(validate({ ...good, issue: "12" }), "issue must have a number and a key");
+  assert.equal(validate(good), null);
+});
+
+test("an issue that is gone answers 403, so the app forgets it and opens a new one", async () => {
+  calls.length = 0;
+  const gone = await handle(request({ ...good, issue: { number: 12, key: expectedKey } }), signed, github(404, { message: "Not Found" }));
+  assert.equal(gone.status, 403);
+  assert.deepEqual(await gone.json(), { error: "that issue is gone" });
+  assert.equal((await handle(request({ ...good, issue: { number: 12, key: expectedKey } }), signed, github(410, {}))).status, 403);
+  assert.equal(calls.length, 2, "GitHub was asked both times; only its answer was re-read");
+});
+
+test("a null issue reads as no issue", async () => {
+  assert.equal(validate({ ...good, issue: null }), null);
+});
+
+test("GitHub rejecting or failing an update maps like a create", async () => {
+  const rejected = await handle(request({ ...good, issue: { number: 12, key: expectedKey } }), signed, github(422, { message: "Validation Failed" }));
+  assert.equal(rejected.status, 400);
+  assert.deepEqual(await rejected.json(), { error: "GitHub refused it: Validation Failed" });
+  const down = await handle(request({ ...good, issue: { number: 12, key: expectedKey } }), signed, github(503, {}));
+  assert.equal(down.status, 502);
+});
