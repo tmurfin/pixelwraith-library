@@ -9,7 +9,7 @@ const APP_COMMENT = "Updated from the app.";
 // POST /submit {kind, title, body} → 201 {number, url, key}; with issue {number, key} → 200 {number, url, key}
 // after updating that issue, or 403 {error} when the key is not this worker's; 400 {error} for a bad request or
 // GitHub rejecting the item; 502 {error} when GitHub is unavailable. POST /status {issues: [{number, key}]} →
-// 200 {issues: [{number, state, needsChanges, comment}]} (see `status`). 405 / 404 otherwise. `githubFetch` is
+// 200 {issues: [{number, state, needsChanges, approved, comment}]} (see `status`). 405 / 404 otherwise. `githubFetch` is
 // swapped for a fake by the test.
 export async function handle(request, env, githubFetch = fetch) {
   const url = new URL(request.url);
@@ -63,12 +63,16 @@ export async function handle(request, env, githubFetch = fetch) {
   return json(201, { number: issue.number, url: issue.html_url, key });
 }
 
-// POST /status {issues: [{number, key}]} → 200 {issues: [{number, state, needsChanges, comment}]}: for every
-// reference whose key is this worker's, GitHub's state ("gone" for 404/410), whether the needs-changes label is
-// on, and the latest comment by the repository's owner, a member or a collaborator that is not the app's own
-// (the repository is public, so anyone may comment; only the maintainers' words reach the app). Wrong keys and
-// GitHub failures leave the issue out
+// POST /status {issues: [{number, key}]} → 200 {issues: [{number, state, needsChanges, approved, comment}]}: for
+// every reference whose key is this worker's, GitHub's state ("gone" for 404/410), whether the needs-changes and
+// approved labels are on, and the latest comment by the repository's owner, a member, a collaborator or the
+// repository's own workflow bot that is not the app's own (the repository is public, so anyone may comment; only
+// the maintainers' words reach the app). Wrong keys and GitHub failures leave the issue out
 const MAINTAINER_ROLES = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
+const WORKFLOW_BOT = "github-actions[bot]";   // only this repository's workflows can comment here as it
+function fromMaintainer(comment) {
+  return MAINTAINER_ROLES.has(comment.author_association) || (comment.user && comment.user.login === WORKFLOW_BOT);
+}
 export async function status(body, env, githubFetch = fetch) {
   const list = body && body.issues;
   if (!Array.isArray(list) || list.length < 1 || list.length > 25
@@ -82,21 +86,23 @@ export async function status(body, env, githubFetch = fetch) {
   for (const { number, key } of list) {
     if (!(await matches(env.SIGNING_SECRET, number, key))) continue;
     const answer = await githubFetch(`${issues}/${number}`, { headers });
-    if (answer.status === 404 || answer.status === 410) { out.push({ number, state: "gone", needsChanges: false, comment: null }); continue; }
+    if (answer.status === 404 || answer.status === 410) { out.push({ number, state: "gone", needsChanges: false, approved: false, comment: null }); continue; }
     if (answer.status !== 200) continue;
     const issue = await answer.json();
-    const needsChanges = (issue.labels || []).some(label => (typeof label === "string" ? label : label.name) === "needs-changes");
+    const labelNames = (issue.labels || []).map(label => (typeof label === "string" ? label : label.name));
+    const needsChanges = labelNames.includes("needs-changes");
+    const approved = labelNames.includes("approved");
     let comment = null;
     if (issue.comments > 0) {
       const comments = await githubFetch(`${issues}/${number}/comments?per_page=100`, { headers });
       if (comments.status === 200) {
         const all = await comments.json();
         for (let i = all.length - 1; i >= 0; i--) {
-          if (MAINTAINER_ROLES.has(all[i].author_association) && all[i].body !== APP_COMMENT) { comment = all[i].body; break; }
+          if (fromMaintainer(all[i]) && all[i].body !== APP_COMMENT) { comment = all[i].body; break; }
         }
       }
     }
-    out.push({ number, state: issue.state, needsChanges, comment });
+    out.push({ number, state: issue.state, needsChanges, approved, comment });
   }
   return json(200, { issues: out });
 }

@@ -172,7 +172,7 @@ test("status answers state, the label and the latest maintainer comment, skippin
                       [owner("First look"), owner("Updated from the app."), owner("Add the pitch"), owner("Updated from the app."), stranger("Buy my tiles")]);
   const answer = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, gh);
   assert.equal(answer.status, 200);
-  assert.deepEqual(await answer.json(), { issues: [{ number: 12, state: "open", needsChanges: true, comment: "Add the pitch" }] });
+  assert.deepEqual(await answer.json(), { issues: [{ number: 12, state: "open", needsChanges: true, approved: false, comment: "Add the pitch" }] });
   assert.equal(calls[0].init.method ?? "GET", "GET");
   assert.equal(calls[0].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12");
   assert.equal(calls[1].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12/comments?per_page=100");
@@ -181,12 +181,12 @@ test("status answers state, the label and the latest maintainer comment, skippin
 test("status asks for comments only when the issue has some, and counts only the maintainer's", async () => {
   calls.length = 0;
   const none = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, []));
-  assert.deepEqual(await none.json(), { issues: [{ number: 12, state: "open", needsChanges: false, comment: null }] });
+  assert.deepEqual(await none.json(), { issues: [{ number: 12, state: "open", needsChanges: false, approved: false, comment: null }] });
   assert.equal(calls.length, 1, "no comments fetch for an issue without comments");
   const strangers = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [{ name: "needs-changes" }] }, [stranger("Spam"), { body: "Hi", author_association: "CONTRIBUTOR" }]));
-  assert.deepEqual(await strangers.json(), { issues: [{ number: 12, state: "open", needsChanges: true, comment: null }] });
+  assert.deepEqual(await strangers.json(), { issues: [{ number: 12, state: "open", needsChanges: true, approved: false, comment: null }] });
   const member = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, [{ body: "From a collaborator", author_association: "COLLABORATOR" }, stranger("later noise")]));
-  assert.deepEqual(await member.json(), { issues: [{ number: 12, state: "open", needsChanges: false, comment: "From a collaborator" }] });
+  assert.deepEqual(await member.json(), { issues: [{ number: 12, state: "open", needsChanges: false, approved: false, comment: "From a collaborator" }] });
 });
 
 test("a tighter limiter guards /status when one is bound", async () => {
@@ -199,9 +199,9 @@ test("a tighter limiter guards /status when one is bound", async () => {
 
 test("status: no comment, closed, gone, a wrong key, a GitHub failure", async () => {
   const plain = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "closed", labels: [] }, []));
-  assert.deepEqual(await plain.json(), { issues: [{ number: 12, state: "closed", needsChanges: false, comment: null }] });
+  assert.deepEqual(await plain.json(), { issues: [{ number: 12, state: "closed", needsChanges: false, approved: false, comment: null }] });
   const gone = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({}, [], 404));
-  assert.deepEqual(await gone.json(), { issues: [{ number: 12, state: "gone", needsChanges: false, comment: null }] });
+  assert.deepEqual(await gone.json(), { issues: [{ number: 12, state: "gone", needsChanges: false, approved: false, comment: null }] });
   calls.length = 0;
   const wrong = await handle(statusRequest([{ number: 12, key: "nope" }, { number: 13, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, []));
   assert.deepEqual(await wrong.json(), { issues: [] }, "a wrong key and a key for another number are both left out");
@@ -220,4 +220,20 @@ test("status refuses a bad list before GitHub", async () => {
   assert.equal((await handle(new Request("https://relay.test/status", { method: "POST", body: "{}" }), signed, ghStatus({}, []))).status, 400);
   assert.equal((await handle(new Request("https://relay.test/status", { method: "GET" }), signed, ghStatus({}, []))).status, 405);
   assert.equal(calls.length, 0);
+});
+
+test("status reports the approved label", async () => {
+  const yes = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [{ name: "approved" }] }, []));
+  assert.deepEqual(await yes.json(), { issues: [{ number: 12, state: "open", needsChanges: false, approved: true, comment: null }] });
+  const no = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, []));
+  assert.deepEqual(await no.json(), { issues: [{ number: 12, state: "open", needsChanges: false, approved: false, comment: null }] });
+});
+
+test("status counts the repository's own workflow bot as the maintainer", async () => {
+  const bot = { body: "Added in version 7", author_association: "NONE", user: { login: "github-actions[bot]", type: "Bot" } };
+  const answer = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "closed", labels: [] }, [bot]));
+  assert.deepEqual(await answer.json(), { issues: [{ number: 12, state: "closed", needsChanges: false, approved: false, comment: "Added in version 7" }] });
+  const otherBot = { body: "Spam", author_association: "NONE", user: { login: "some-other[bot]", type: "Bot" } };
+  const skipped = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, [otherBot]));
+  assert.deepEqual(await skipped.json(), { issues: [{ number: 12, state: "open", needsChanges: false, approved: false, comment: null }] });
 });

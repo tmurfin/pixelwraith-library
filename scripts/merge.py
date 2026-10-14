@@ -2,14 +2,15 @@
 """Merges a submission into tiles.json or projectors.json.
 
 Usage: gh issue view 12 --json body -q .body | python3 scripts/merge.py projectors
-       python3 scripts/merge.py tiles submission.md
+       python3 scripts/merge.py tiles submission.md [--no-bump]
 Reads the first ```json block, checks it, assigns a slug id, appends it, bumps the version and sets the date,
 then runs validate.py. Refuses a duplicate manufacturer and model, a bad number, or duplicate lens names.
+With --no-bump the entry is appended and validated but the version and date stay, for publish.py to bump once.
 """
-import datetime, json, os, re, subprocess, sys
+import datetime, json, math, os, re, subprocess, sys
 
 def is_number(x):
-    return isinstance(x, (int, float)) and not isinstance(x, bool)
+    return isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -30,15 +31,17 @@ def discontinued(item, ordered, what):
     return ordered
 
 def main():
-    if len(sys.argv) < 2 or sys.argv[1] not in ("tiles", "projectors"):
-        fail("usage: merge.py <tiles|projectors> [file]")
-    kind = sys.argv[1]
-    text = open(sys.argv[2]).read() if len(sys.argv) > 2 else sys.stdin.read()
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    flags = {a for a in sys.argv[1:] if a.startswith("--")}
+    if not args or args[0] not in ("tiles", "projectors") or not flags <= {"--no-bump"}:
+        fail("usage: merge.py <tiles|projectors> [file] [--no-bump]")
+    kind = args[0]
+    text = open(args[1]).read() if len(args) > 1 else sys.stdin.read()
     m = re.search(r"```json\s*(\{.*?\})\s*```", text, re.S)
     if not m:
         fail("no ```json block found in the submission")
     try:
-        entry = json.loads(m.group(1))
+        entry = json.loads(m.group(1), parse_constant=lambda c: fail(f"{c} is not a number"))
     except json.JSONDecodeError as e:
         fail(f"the JSON block does not parse: {e}")
     for key in ("manufacturer", "model"):
@@ -90,20 +93,28 @@ def main():
     path = os.path.join(ROOT, f"{kind}.json")
     data = json.load(open(path))
     new_id = slug(ordered["manufacturer"], ordered["model"])
+    if not new_id:
+        fail("manufacturer and model need at least one letter or digit between them")
     for existing in data["entries"]:
         if existing["id"] == new_id or (existing["manufacturer"].lower() == ordered["manufacturer"].lower() and existing["model"].lower() == ordered["model"].lower()):
             fail(f"{ordered['manufacturer']} {ordered['model']} is already in {kind}.json as {existing['id']}")
     ordered["id"] = new_id
     data["entries"].append(ordered)
-    data["version"] = int(data["version"]) + 1
-    data["updated"] = datetime.date.today().isoformat()
+    if "--no-bump" not in flags:
+        data["version"] = int(data["version"]) + 1
+        data["updated"] = datetime.date.today().isoformat()
+    original = open(path).read()   # put back if the validator refuses, so a bad entry never stays in the file
     with open(path, "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False, sort_keys=False)
         f.write("\n")
     result = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "validate.py")], capture_output=True, text=True)
     if result.returncode != 0:
+        open(path, "w").write(original)
         fail("validate.py failed after the merge:\n" + result.stderr)
-    print(f"added {new_id} to {kind}.json, now version {data['version']}")
+    if "--no-bump" in flags:
+        print(f"added {new_id} to {kind}.json (unpublished)")
+    else:
+        print(f"added {new_id} to {kind}.json, now version {data['version']}")
 
 if __name__ == "__main__":
     main()

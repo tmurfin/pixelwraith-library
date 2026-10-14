@@ -23,69 +23,63 @@ You can also open a new issue by hand from the Tile or Projector template and fi
 - Clone this repository and open a terminal **at its root** (the folder that holds `tiles.json`). Every command
   below runs from there; from any other folder the script path is wrong.
 - Install the GitHub CLI and sign in: `gh auth login`.
-- Create the label the refuse step uses, once per repository:
+- Create the labels the review and the Publish workflow use, once per repository:
 
   ```
   gh label create needs-changes --description "Sent back to the submitter" --color d93f0b
+  gh label create approved --description "Goes out in the next version" --color 0e8a16
+  gh label create merged --description "In the next version, not yet published" --color bfd4f2
   ```
 - Python 3 is the only other requirement.
 
-### Each submission
+### Reviewing
 
-1. See what is waiting:
+Each submission is an issue. Read it (`gh issue view 12`, or on the issue page), check the numbers against
+the spec sheet, then decide with a label:
 
-   ```
-   cd ~/Developer/pixelwraith-library
-   gh issue list
-   ```
+- `approved`: it goes out in the next version. `gh issue edit 12 --add-label approved`, or the Labels menu on
+  the issue page.
+- `needs-changes` with a comment saying what to fix:
 
-   Each line starts with the issue number, for example `#12`. The title says what it is: "Tile: …" or
-   "Projector: …".
+  ```
+  gh issue edit 12 --add-label needs-changes
+  gh issue comment 12 --body "Add the pitch to the model name"
+  ```
 
-2. Read it and check the numbers against the spec sheet:
+  The submitter sees the comment in the app at their next check, edits the entry and resubmits, which reopens
+  the issue, takes the label off and comments "Updated from the app."
+- Close it with a comment to decline for good.
 
-   ```
-	gh issue view #
-   ```
+An issue filed by hand can be edited by its author after you label it; the workflow merges the body as it is
+at publish time, so glance at an issue marked "edited" before you publish. Issues the app files can only change
+through the app, which takes the label off again.
 
-   To send it back for changes, add the label `needs-changes` and write a comment saying what to fix:
+### Publishing
 
-   ```
-   gh issue edit 12 --add-label needs-changes
-   gh issue comment 12 --body "Add the pitch to the model name"
-   ```
+When a version should go out, run the Publish workflow from the repository's Actions tab, or:
 
-   The submitter sees the comment in the app at their next check, edits the entry and resubmits, which reopens
-   the issue, takes the label off and comments "Updated from the app." To decline for good, close the issue
-   without the label and say why in a comment.
+```
+gh workflow run publish.yml
+```
 
-3. Merge it. Replace `12` with the issue's number and the last word with the kind, `tiles` for a tile or
-   `projectors` for a projector:
+It merges every `approved` issue, raises each changed file's version once, commits "Publish tiles version 7"
+to main, pushes, and closes the issues with "Added in version 7". An issue the merge script refuses (a model
+already in the library, a bad number) gets the reason as a comment and loses `approved`; the rest still go
+out. `gh run watch` follows the run. The apps pick the version up at their next check, and the submitter's
+own copy of each entry is removed from Mine.
 
-   ```
-   gh issue view # --json body -q .body | python3 scripts/merge.py ‘tiles|projectors’
-   ```
+### A one-off without the workflow
 
-   The script reads the issue's JSON block, assigns the id, appends the entry, raises the file's version, sets
-   the date and validates the file. It prints `added <id> to tiles.json, now version <n>`. It changes nothing
-   and prints the reason when an entry already exists with that manufacturer and model, a number is missing or
-   below zero, or two lenses share a name; fix the issue text or ask the submitter, then run it again.
+From the repository root, with the issue's number and the kind, `tiles` or `projectors`:
 
-4. Publish:
+```
+gh issue view 12 --json body -q .body | python3 scripts/merge.py tiles
+git commit -am "Add PixelFLEX FLEXTour 1.95" && git push
+gh issue close 12 --comment "Added in version 6"
+```
 
-   ```
-   git commit -am "Add ‘manufacturer’ ‘model’” && git push
-   ```
-
-   The push runs the validator and the relay test on GitHub. `gh run list --limit 1` shows the result.
-
-5. Tell the submitter and close the issue, using the version the merge printed:
-
-   ```
-   gh issue close # --comment "Added in version #”
-   ```
-
-Several submissions can be merged in a row before one commit; each merge raises the version again.
+This merges and publishes in one step (the version goes up by one). To stage several by hand instead, add
+`--no-bump` to each merge, then `python3 scripts/publish.py tiles` once before the commit.
 
 ### Editing by hand
 
@@ -114,6 +108,9 @@ that window still sees the old version and reads "Up to date"; check again a few
   and `projectors` for "Projector:" issues.
 - `nothing to commit, working tree clean` after the merge: the merge did not run (see the two lines above), so
   there is nothing new to publish yet.
+- The Publish run stops with `missing label(s)`: create the labels from the setup above.
+- A run cannot close an issue with a version its entry is not in: a `merged` issue whose entry is missing from
+  the published file is sent back with a comment instead.
 - The relay stops opening issues and the app shows a clock on submitted entries: the GitHub token stored in
   the worker has lapsed. Create a new fine-grained token and store it again, as described in `relay/README.md`.
 
@@ -125,7 +122,11 @@ relay/worker.test.mjs` runs its test; the push workflow runs it too.
 
 ## Scripts
 
-- `scripts/merge.py <tiles|projectors>` merges one submission read from standard input (the pipe above) or
-  from a file given as a second argument.
+- `scripts/merge.py <tiles|projectors> [file] [--no-bump]` merges one submission read from standard input (the
+  pipe above) or from a file; with `--no-bump` it leaves the version and date for `publish.py`.
+- `scripts/publish.py <tiles|projectors|both>` raises a file's version by one, sets its date and validates.
+- `scripts/publish_approved.py` merges every `approved` issue without bumping, publishes each changed kind once,
+  commits, pushes and closes the issues; the Publish workflow runs it.
 - `scripts/validate.py` checks both library files; it runs on every push.
-- `scripts/test_scripts.py` exercises both scripts against fixtures.
+- `scripts/test_scripts.py` exercises the scripts against fixtures, the publish driver against a fake `gh` and
+  `git` included.

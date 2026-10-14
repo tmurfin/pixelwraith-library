@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Checks tiles.json and projectors.json: shape, numbers, unique ids, unique lens names, discontinued flags. Exit 1 on any problem."""
-import json, os, sys
+import json, math, os, sys
 
 def is_number(x):
-    return isinstance(x, (int, float)) and not isinstance(x, bool)
+    return isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 problems = []

@@ -23,10 +23,10 @@ then updates that issue's title and body, reopens it, leaves the comment "Update
 secret, answers `403 { "error": "not this app's submission" }`, and the app then opens a new issue instead.
 
 `POST /status` with `{ "issues": [ { "number": 12, "key": "…" } ] }` (up to 25) answers, for each reference whose
-key is this worker's, `{ "number", "state", "needsChanges", "comment" }`: GitHub's `open` or `closed` (`gone`
-when the issue was deleted), whether the `needs-changes` label is on, and the latest comment by the repository's
-owner, a member or a collaborator that is not the app's own "Updated from the app." (the repository is public, so
-a stranger's comment never reaches the app). Wrong keys and GitHub failures leave the issue out; an issue
+key is this worker's, `{ "number", "state", "needsChanges", "approved", "comment" }`: GitHub's `open` or `closed` (`gone`
+when the issue was deleted), whether the `needs-changes` and `approved` labels are on, and the latest comment by the repository's
+owner, a member, a collaborator or the repository's own workflow bot that is not the app's own "Updated from the
+app." (the repository is public, so a stranger's comment never reaches the app). Wrong keys and GitHub failures leave the issue out; an issue
 without comments costs one GitHub call, with comments two. The app checks at launch and on Settings ▸ Check
 Now; `/status` has its own limiter, ten a minute per address. An update also resets the issue's labels to `submission` and the kind, taking
 `needs-changes` off.
