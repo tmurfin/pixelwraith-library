@@ -30,6 +30,7 @@ You can also open a new issue by hand from the Tile or Projector template and fi
 1. See what is waiting:
 
    ```
+   cd ~/Developer/pixelwraith-library
    gh issue list
    ```
 
@@ -39,14 +40,14 @@ You can also open a new issue by hand from the Tile or Projector template and fi
 2. Read it and check the numbers against the spec sheet:
 
    ```
-   gh issue view 12
+	gh issue view #
    ```
 
 3. Merge it. Replace `12` with the issue's number and the last word with the kind, `tiles` for a tile or
    `projectors` for a projector:
 
    ```
-   gh issue view 12 --json body -q .body | python3 scripts/merge.py tiles
+   gh issue view # --json body -q .body | python3 scripts/merge.py ‘tiles|projectors’
    ```
 
    The script reads the issue's JSON block, assigns the id, appends the entry, raises the file's version, sets
@@ -57,7 +58,7 @@ You can also open a new issue by hand from the Tile or Projector template and fi
 4. Publish:
 
    ```
-   git commit -am "Add <manufacturer> <model>" && git push
+   git commit -am "Add ‘manufacturer’ ‘model’” && git push
    ```
 
    The push runs the validator and the relay test on GitHub. `gh run list --limit 1` shows the result.
@@ -65,7 +66,7 @@ You can also open a new issue by hand from the Tile or Projector template and fi
 5. Tell the submitter and close the issue, using the version the merge printed:
 
    ```
-   gh issue close 12 --comment "Added in version 6"
+   gh issue close # --comment "Added in version #”
    ```
 
 Several submissions can be merged in a row before one commit; each merge raises the version again.
