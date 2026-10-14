@@ -160,7 +160,7 @@ test("GitHub rejecting or failing an update maps like a create", async () => {
 const statusRequest = (issues) => new Request("https://relay.test/status", { method: "POST", body: JSON.stringify({ issues }) });
 const ghStatus = (issueBody, comments, issueStatus = 200) => async (url, init) => {
   calls.push({ url, init });
-  if (url.endsWith("/comments?per_page=100")) return new Response(JSON.stringify(comments), { status: 200 });
+  if (url.includes("/comments?per_page=100")) return new Response(JSON.stringify(comments), { status: 200 });
   return new Response(JSON.stringify({ comments: comments.length, ...issueBody }), { status: issueStatus });
 };
 const owner = (body) => ({ body, author_association: "OWNER" });
@@ -175,7 +175,7 @@ test("status answers state, the label and the latest maintainer comment, skippin
   assert.deepEqual(await answer.json(), { issues: [{ number: 12, state: "open", needsChanges: true, approved: false, comment: "Add the pitch" }] });
   assert.equal(calls[0].init.method ?? "GET", "GET");
   assert.equal(calls[0].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12");
-  assert.equal(calls[1].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12/comments?per_page=100");
+  assert.equal(calls[1].url, "https://api.github.com/repos/tmurfin/pixelwraith-library/issues/12/comments?per_page=100&page=1");
 });
 
 test("status asks for comments only when the issue has some, and counts only the maintainer's", async () => {
@@ -236,4 +236,16 @@ test("status counts the repository's own workflow bot as the maintainer", async 
   const otherBot = { body: "Spam", author_association: "NONE", user: { login: "some-other[bot]", type: "Bot" } };
   const skipped = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, ghStatus({ number: 12, state: "open", labels: [] }, [otherBot]));
   assert.deepEqual(await skipped.json(), { issues: [{ number: 12, state: "open", needsChanges: false, approved: false, comment: null }] });
+});
+
+test("status reads the last page of comments on a long issue", async () => {
+  calls.length = 0;
+  const gh = async (url, init) => {
+    calls.push({ url, init });
+    if (url.includes("/comments")) return new Response(JSON.stringify([owner("Latest word")]), { status: 200 });
+    return new Response(JSON.stringify({ number: 12, state: "open", labels: [], comments: 150 }), { status: 200 });
+  };
+  const answer = await handle(statusRequest([{ number: 12, key: expectedKey }]), signed, gh);
+  assert.deepEqual(await answer.json(), { issues: [{ number: 12, state: "open", needsChanges: false, approved: false, comment: "Latest word" }] });
+  assert.ok(calls[1].url.endsWith("/comments?per_page=100&page=2"), calls[1].url);
 });

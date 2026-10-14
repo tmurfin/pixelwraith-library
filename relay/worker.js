@@ -94,7 +94,9 @@ export async function status(body, env, githubFetch = fetch) {
     const approved = labelNames.includes("approved");
     let comment = null;
     if (issue.comments > 0) {
-      const comments = await githubFetch(`${issues}/${number}/comments?per_page=100`, { headers });
+      // The latest comment sits on the last page; a page holds a hundred
+      const lastPage = Math.max(1, Math.ceil(issue.comments / 100));
+      const comments = await githubFetch(`${issues}/${number}/comments?per_page=100&page=${lastPage}`, { headers });
       if (comments.status === 200) {
         const all = await comments.json();
         for (let i = all.length - 1; i >= 0; i--) {
