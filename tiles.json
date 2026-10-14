@@ -5291,8 +5291,36 @@
         "width": 500
       },
       "transparency": null
+    },
+    {
+      "id": "pixelflex-flextour-3-9-half",
+      "manufacturer": "PixelFLEX",
+      "model": "FLEXTour 3.9 Half",
+      "tileResolution": {
+        "height": 128,
+        "width": 128
+      },
+      "tileSize": {
+        "height": 500,
+        "width": 500
+      },
+      "transparency": null
+    },
+    {
+      "id": "pixelflex-flextour-3-9",
+      "manufacturer": "PixelFLEX",
+      "model": "FLEXTour 3.9",
+      "tileResolution": {
+        "height": 256,
+        "width": 128
+      },
+      "tileSize": {
+        "height": 1000,
+        "width": 500
+      },
+      "transparency": null
     }
   ],
   "updated": "2026-10-14",
-  "version": 8
+  "version": 9
 }
